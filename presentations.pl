@@ -35,41 +35,17 @@
                 author => 'Stevan Little',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1941',
             },
-            #{
-            #    title => 'Using KiokuDB',
-            #    author => 'Jonathan Rockway',
-            #    schedule_url => 'http://yapc10.org/yn2009/talk/1970',
-            #    slide_link => 'http://www.jrock.us/yapc-na-2009-kioku.esl'
-            #},
             {
                 title => 'Extending Moose for Applications',
                 author => 'Shawn Moore',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1880',
                 slide_url => 'http://sartak.org/talks/yapc-na-2009/extending-moose/'
             },
-            #{
-            #    title => 'XML::Toolkit: Tools to Ease the Pain',
-            #    author => 'Chris Prather',
-            #    schedule_url => 'http://yapc10.org/yn2009/talk/1932',
-            #    slide_url => 'http://chris.prather.org/talks/YAPC-2009/xml-toolkit/'
-            #},
             {
                 title => 'What Haskell did to my brain',
                 author => 'Yuval Kogman',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1956'
             },
-            #{
-            #    title => 'Web Applications in 2009',
-            #    author => 'Jonathan Rockway',
-            #    schedule_url => 'http://yapc10.org/yn2009/talk/1972',
-            #    slide_url => 'http://jrock.us/yapc-na-2009-web.esl.txt'
-            #},
-            #{
-            #    title => 'The EPO Extended Core',
-            #    author => 'Chris Prather',
-            #    schedule_url => 'http://yapc10.org/yn2009/talk/1931',
-            #    slide_url => 'http://chris.prather.org/talks/YAPC-2009/epo-ec/'
-            #},
             {
                 title => 'Data Visualization with Chart::Clicker',
                 author => 'Cory Watson',
@@ -104,51 +80,6 @@
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2642',
                 slide_url => 'http://sartak.org/talks/yapc-na-2010/path-dispatcher/'
             },
-            #{
-            #    title => 'Modern Perl for the Worker Pattern',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2637'
-            #},
-            #{
-            #    title => 'Introduction to POE',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2638'
-            #},
-            #{
-            #    title => 'Modern POE and Moose Integration with POEx:: Role:: SessionInstantiation',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2639'
-            #},
-            #{
-            #    title => 'POE, Plack and Web::Simple ftw',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2640'
-            #},
-            #{
-            #    title => 'Catalyst Datagrids and You',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2640'
-            #},
-            #{
-            #    title => 'Intro to Catalyst',
-            #    author => 'Nick Perez',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2739'
-            #},
-            #{
-            #    title => 'Why MooseX::POE sucks, and what to do about it',
-            #    author => 'Chris Prather',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2577'
-            #},
-            #{
-            #    title => 'Thinking in Moose',
-            #    author => 'Chris Prather',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2582'
-            #},
-            #{
-            #    title => 'Intro to Catalyst',
-            #    author => 'Chris Prather',
-            #    schedule_url => 'http://yapc2010.com/yn2010/talk/2738'
-            #},
             {
                 title => "Template developers won't hate and designers can use.",
                 author => 'Jay Shirley',
