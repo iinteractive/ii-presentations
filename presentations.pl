@@ -398,8 +398,13 @@ __DATA__
 
         <div class="container">
 
-            <div>
+            <div class="hero-unit">
                 <img src="img/ii-logo-horiz-290.png" />
+                <p align="center">
+                    At Infinity, it is our conviction that the true value of
+                    Open Source software can only by found through
+                    participation.
+                </p>
             </div>
 
             <hr>
@@ -411,7 +416,7 @@ __DATA__
                 [% END %]
                 </ul>
                  
-                <div class="tab-content">
+                <div class="tab-content" style="height: 500; overflow: auto">
                 [% FOREACH conference IN talks.keys.sort.reverse %]
                     <div class="tab-pane" id="[% to_ident( conference ) %]">
                     [% FOREACH year IN talks.$conference.keys.sort %]
@@ -446,8 +451,8 @@ __DATA__
 
             <hr>
 
-            <footer>
-                <p>&copy; Company 2012</p>
+            <footer align="center">
+                <p>&copy; 2012 Infinity Interactive, Inc.</p>
             </footer>
 
         </div>
