@@ -89,6 +89,11 @@ my $talks = {
                 author => 'Yuval Kogman',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1956'
             },
+            {
+                title => 'Botting NetHack with TAEB',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://yapc10.org/yn2009/talk/2148',
+            },
         ],
         2010 => [
             {
@@ -185,7 +190,17 @@ my $talks = {
                 author => 'Shawn Moore',
                 schedule_url => 'http://act.yapc.eu/ye2012/talk/4150',
                 slide_url => 'http://sartak.org/talks/yapc-eu-2012/role-usage-patterns/'
-            }
+            },
+            {
+                title => 'TIMTOWTDI in 2012',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4182',
+            },
+            {
+                title => 'Dependency Injection with Bread::Board',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4181',
+            },
         ],
     },
     'YAPC::Asia' => {
