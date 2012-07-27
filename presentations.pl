@@ -3,7 +3,47 @@
 use strict;
 use warnings;
 
-my $talks = [
+use Template;
+
+my $authors = {
+    'Stevan Little' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/cc55e2ce28bd4649215ef05b8704e9be.png',
+        github_url => 'https://github.com/stevan',
+        cpan_url => 'https://www.metacpan.org/author/STEVAN',
+    },
+    'Yuval Kogman' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/965ab495ae19eeb538d054ae6caaf1bb.png',
+        github_url => 'https://github.com/nothingmuch',
+        cpan_url => 'https://www.metacpan.org/author/NUFFIN'
+    },
+    'Shawn Moore' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/609c52819f220e49667a53cc0a82bfa7.png',
+        github_url => 'https://github.com/sartak',
+        cpan_url => 'https://www.metacpan.org/author/SARTAK'
+    },
+    'Jesse Luehrs' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/88766de7a058697d3d0335b8d384fd2a.png',
+        github_url => 'https://github.com/doy',        
+        cpan_url => 'https://www.metacpan.org/author/DOY'
+    },
+    'Jay Hannah' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/e45a33b946514b3720ca409b3b876f66.png',
+        github_url => 'https://github.com/jhannah',        
+        cpan_url => 'https://www.metacpan.org/author/JHANNAH'
+    },
+    'John Anderson' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/025d30f04795e1efc142701e4ac89bfd.png',
+        github_url => 'https://github.com/genehack',        
+        cpan_url => 'https://www.metacpan.org/author/GENEHACK'
+    },
+    'Dylan Hardison' => {
+        gravatar_url => 'http://www.gravatar.com/avatar/ea4290f897444ad075f1c33fecc24f8f.png',
+        github_url => 'https://github.com/dylanwh',        
+        cpan_url => 'https://www.metacpan.org/author/DHARDISON'
+    }
+};
+
+my $talks = {
     'YAPC::NA' => {
         2006 => [
             {
@@ -292,7 +332,7 @@ my $talks = [
                 schedule_url => 'http://dcbpw.org/dcbpw2012/talk/4066'
             }
         ],
-    }
+    },
     'E-LAMP Nashville' => {
         2009 => [
             {
@@ -301,4 +341,122 @@ my $talks = [
             }
         ],
     }
-]
+};
+
+my $output;
+Template->new->process(
+    \*DATA, 
+    {
+        talks   => $talks,
+        authors => $authors,
+        to_ident => sub {
+            my $ident = lc $_[0];
+            $ident =~ s/\s/_/g;
+            $ident =~ s/\-/_/g;
+            $ident =~ s/\//_/g;            
+            $ident =~ s/\:/_/g;
+            $ident;
+        }
+    },
+    \$output
+);
+
+print $output;
+
+1;
+
+__DATA__
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Infinity Interactive Presentations</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- Le styles -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background: #ffffff;
+                color: #242927;
+            }
+        </style>
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="tabbable tabs-left">
+                <ul class="nav nav-tabs" id="conferences">
+                [% FOREACH conference IN talks.keys.sort.reverse %]
+                    <li><a href="#[% to_ident( conference ) %]" data-toggle="pill">[% conference %]</a></li>
+                [% END %]
+                </ul>
+                 
+                <div class="tab-content">
+                [% FOREACH conference IN talks.keys.sort.reverse %]
+                    <div class="tab-pane" id="[% to_ident( conference ) %]">
+                    [% FOREACH year IN talks.$conference.keys.sort %]
+                        <h2>[% year %]</h2>
+                        [% FOREACH talk IN talks.$conference.$year %]
+                            <div>
+                                <strong>[% talk.title %]</strong>
+                                <div>
+                                    [% SET author = talk.author %]
+                                    [% author %]
+                                    &mdash;
+                                    <img src="[% authors.$author.gravatar_url %]" />
+                                    <a href="[% authors.$author.github_url %]">github</a>
+                                    <a href="[% authors.$author.cpan_url %]">CPAN</a>
+                                </div>
+                            </div>
+                        [% END %]
+                    [% END %]
+                    </div>
+                [% END %]
+                </div>
+            </div>
+        
+
+
+            <hr>
+
+            <footer>
+                <p>&copy; Company 2012</p>
+            </footer>
+
+        </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="javascript">
+        $(function () {
+            $('#conferences a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+        });
+    </scrip>
+    </body>
+</html>
+
+
+
+
+
+
