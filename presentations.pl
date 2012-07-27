@@ -1,6 +1,9 @@
 #!perl
 
-[
+use strict;
+use warnings;
+
+my $talks = [
     'YAPC::NA' => {
         2006 => [
             {
@@ -46,16 +49,6 @@
                 author => 'Yuval Kogman',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1956'
             },
-            {
-                title => 'Data Visualization with Chart::Clicker',
-                author => 'Cory Watson',
-                schedule_url => 'http://yapc10.org/yn2009/talk/1879'
-            },
-            {
-                title => 'Moose for Managers',
-                author => 'Cory Watson',
-                schedule_url => 'http://yapc10.org/yn2009/talk/1878'
-            }
         ],
         2010 => [
             {
@@ -79,27 +72,6 @@
                 author => 'Shawn Moore',
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2642',
                 slide_url => 'http://sartak.org/talks/yapc-na-2010/path-dispatcher/'
-            },
-            {
-                title => "Template developers won't hate and designers can use.",
-                author => 'Jay Shirley',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2652'
-            },
-            {
-                title => "Building Maintainable Catalyst Applications",
-                author => 'Jay Shirley',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2653',
-                slide_url => 'http://www.slideshare.net/jshirley/zen-building-maintainable-catalyst-applications'
-            },
-            {
-                title => 'Moose for Managers: The Remix',
-                author => 'Cory Watson',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2579',
-            },
-            {
-                title => 'Invigorating The Forgotten Bits Of Your WebApp with Verification and Messaging',
-                author => 'Cory Watson',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2651'
             },
             {
                 title => 'Catalyst in the wild: omnihotels.com',
@@ -130,16 +102,6 @@
                 schedule_url => 'http://www.yapc2011.us/yn2011/talk/3197',
                 slide_url => 'http://sartak.org/talks/yapc-na-2011/announcing-announcements/'
             },
-            {
-                title => 'Building better applications with Data::Manager',
-                author => 'Jay Shirley',
-                schedule_url => 'http://www.yapc2011.us/yn2011/talk/3232'
-            },
-            {
-                title => 'How NOT to build a multi-million dollar eCommerce system',
-                author => 'Cory Watson',
-                schedule_url => 'http://www.yapc2011.us/yn2011/talk/3217'
-            }
         ],
         2012 => [
             {
@@ -177,9 +139,23 @@
                 schedule_url => 'http://vienna.yapceurope.org/ye2007/talk/648'
             }
         ],
-        2012 => [],
     },
-    'YAPC::Asia' => {},
+    'YAPC::Asia' => {
+        2010 => [
+            {
+                title => 'The Evolution of Path::Dispatcher',
+                author => 'Shawn Moore',
+                schedule_url => 'http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45'
+            },
+        ],
+        2011 => [
+            {
+                title => 'DTrace: printf debugging for seventh-level wizards',
+                author => 'Shawn Moore',
+                schedule_url => 'http://yapcasia.org/2011/talk/23.html'
+            }
+        ]
+    },
     'OSCON' => {
         2008 => [
             {
@@ -199,14 +175,109 @@
         ]
     },
     'Pittsburgh Perl Workshop' => {
-        2007 => [],
-        2008 => [],
-        2010 => [],
-        2011 => [],
+        2007 => [
+            {
+                title => 'Introduction to Moose',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2007/talk/715'
+            },
+            {
+                title => 'Horizontal Code Reuse with Moose::Role',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2007/talk/714'
+            }            
+        ],
+        2008 => [
+            {
+                title => '<strike>R</strike>DBMs',
+                author => 'Yuval Kogman',
+                schedule_url => 'http://pghpw.org/ppw2008/talk/1543'
+            },
+            {
+                title => 'Moose: A Postmodern Object System for Perl 5',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2008/talk/1522'
+            },               
+            {
+                title => "The Case for switching to Python - A Manager's Guide to Moose",
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2008/talk/1523'
+            }               
+        ],
+        2010 => [
+            {
+                title => 'The Evolution of Path::Dispatcher',
+                author => 'Shawn Moore',
+                schedule_url => 'http://pghpw.org/ppw2010/talk/3002'
+            },
+            {
+                title => 'Inversion of Control and Dependency Injection with Bread::Board',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2010/talk/3030'
+            }
+        ],
+        2011 => [
+            {
+                title => 'Perl and Git, Sitting In A Tree',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2011/talk/3645'
+            },
+            {
+                title => 'A Brave New Perl World',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2011/talk/3618'
+            }
+        ],
     },
     'Orlando Perl Workshop' => {
-        2010 => [],
-        2011 => [],
+        2009 => [
+            {
+                title => 'Objects in Lua',
+                author => 'Dylan Hardison',
+                schedule_url => 'http://www.perloasis.info/opw2009/talk/1703'
+            }
+        ],
+        2010 => [
+            {
+                title => 'Untitled No. 12',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2499'
+            },
+            {
+                title => 'Surviving in the Cruel, Unforgiving World',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2476'
+            },
+            {
+                title => 'How to Debianize a CPAN Dist',
+                author => 'Dylan Hardison',
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2483'
+            }
+        ],
+        2011 => [
+            {
+                title => '‎Managing assets: Keeping 7.5G of media files out of subversion‎',
+                author => 'Dylan Hardison',
+                schedule_url => 'http://www.perloasis.info/opw2011/talk/3181'
+            },
+            {
+                title => '‎Getting Code for Free - A Love Letter to Open Source‎ (Keynote)',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.perloasis.info/opw2011/talk/3182'
+            }
+        ],
+        2012 => [
+            {
+                title => 'Organizing Technical Groups in Meatspace',
+                author => 'Dylan Hardison',
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3928'
+            },
+            {
+                title => 'A Brave New Perl World',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3966'
+            }
+        ]
     },
     'Washington DC/Baltimore Perl Workshop' => {
         2012 => [
@@ -223,6 +294,11 @@
         ],
     }
     'E-LAMP Nashville' => {
-        2009 => [],
+        2009 => [
+            {
+                title => 'Perl - Good Languages Borrow, Great Languages Steal',
+                author => 'Stevan Little'
+            }
+        ],
     }
 ]
