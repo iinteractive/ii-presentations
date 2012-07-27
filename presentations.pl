@@ -398,6 +398,12 @@ __DATA__
 
         <div class="container">
 
+            <div>
+                <img src="img/ii-logo-horiz-290.png" />
+            </div>
+
+            <hr>
+
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
                 [% FOREACH conference IN talks.keys.sort.reverse %]
@@ -411,15 +417,22 @@ __DATA__
                     [% FOREACH year IN talks.$conference.keys.sort %]
                         <h2>[% year %]</h2>
                         [% FOREACH talk IN talks.$conference.$year %]
-                            <div>
-                                <strong>[% talk.title %]</strong>
-                                <div>
-                                    [% SET author = talk.author %]
-                                    [% author %]
-                                    &mdash;
-                                    <img src="[% authors.$author.gravatar_url %]" />
-                                    <a href="[% authors.$author.github_url %]">github</a>
-                                    <a href="[% authors.$author.cpan_url %]">CPAN</a>
+                            <div class="row">
+                                <div class="span4">
+                                    <strong>[% talk.title %]</strong> [% IF talk.schedule_url %]<a target="_blank" href="[% talk.schedule_url %]">[link]</a>[% END %]
+                                </div>
+                                <div class="span2">
+                                    [% SET author = talk.author %] 
+                                    <div class="btn-group">
+                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <img src="[% authors.$author.gravatar_url %]" height="20" /> [% author %]
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a target="_blank" href="[% authors.$author.github_url %]">Github</a></li>
+                                            <li><a target="_blank" href="[% authors.$author.cpan_url %]">CPAN</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         [% END %]
