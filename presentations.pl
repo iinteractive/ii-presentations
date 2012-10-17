@@ -355,6 +355,12 @@ my $talks = {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2012/talk/3966'
+            },
+            {
+                title => 'DTrace: printf debugging for seventh-level wizards',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3868',
+                slide_url => 'http://sartak.org/talks/perl-oasis-2012/dtrace/'
             }
         ]
     },
