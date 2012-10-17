@@ -212,6 +212,7 @@ my $talks = {
                 title => 'Dependency Injection with Bread::Board',
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://act.yapc.eu/ye2012/talk/4181',
+                slide_url => 'http://tozt.net/talks/bread_board_yapc_eu_2012.pdf',
             },
         ],
     },
