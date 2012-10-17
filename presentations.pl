@@ -147,6 +147,12 @@ my $talks = {
                 schedule_url => 'http://www.yapc2011.us/yn2011/talk/3197',
                 slide_url => 'http://sartak.org/talks/yapc-na-2011/announcing-announcements/'
             },
+            {
+                title => 'cpandoc',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.yapc2011.us/yn2011/talk/3519',
+                slide_url => 'http://sartak.org/talks/yapc-na-2011/cpandoc/'
+            },
         ],
         2012 => [
             {
@@ -168,7 +174,13 @@ my $talks = {
                 title => 'Dependency Injection with Bread::Board',
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://act.yapcna.org/2012/talk/147'
-            }
+            },
+            {
+                title => 'git-status-tackle',
+                author => 'Shawn Moore',
+                schedule_url => 'http://act.yapcna.org/2012/talk/173',
+                slide_url => 'http://sartak.org/talks/yapc-na-2012/git-status-tackle/'
+            },
         ],
     },
     'YAPC::EU' => {
