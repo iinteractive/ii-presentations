@@ -335,6 +335,30 @@ my $talks = {
             }
         ],
     },
+    'Frozen Perl' => {
+        2008 => [
+            {
+                title => 'Template::Declare',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2008/talk/858',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2008/template-declare/frozen-perl.2008.txt'
+            },
+        ],
+        2009 => [
+            {
+                title => 'Devel::REPL and Carp::REPL',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2009/talk/1663',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2009/devel-repl/'
+            },
+            {
+                title => 'Introduction to Moose',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2009/talk/1687',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2009/moose/'
+            },
+        ],
+    },
     'E-LAMP Nashville' => {
         2009 => [
             {
