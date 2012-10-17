@@ -557,7 +557,7 @@ __DATA__
                 $(this).tab('show');
             })
         });
-    </scrip>
+    </script>
     </body>
 </html>
 
