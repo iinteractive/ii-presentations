@@ -541,7 +541,7 @@ __DATA__
             <hr>
 
             <footer>
-                <p>&copy; Company 2012</p>
+                <p>&copy; Infinity Interactive 2012</p>
             </footer>
 
         </div>
