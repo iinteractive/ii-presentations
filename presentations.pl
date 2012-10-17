@@ -179,8 +179,30 @@ my $talks = {
                 schedule_url => 'http://vienna.yapceurope.org/ye2007/talk/648'
             }
         ],
+        2012 => [
+            {
+                title => 'Moose Role Usage Patterns',
+                author => 'Shawn Moore',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4150',
+                slide_url => 'http://sartak.org/talks/yapc-eu-2012/role-usage-patterns/'
+            }
+        ],
     },
     'YAPC::Asia' => {
+        2009 => [
+            {
+                title => 'API Design',
+                author => 'Shawn Moore',
+                schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2188',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/api-design/'
+            },
+            {
+                title => '(Parameterized) Roles',
+                author => 'Shawn Moore',
+                schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2261',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/'
+            },
+        ],
         2010 => [
             {
                 title => 'The Evolution of Path::Dispatcher',
@@ -366,7 +388,19 @@ my $talks = {
                 author => 'Stevan Little'
             }
         ],
-    }
+    },
+    'OSDC Taiwan' => {
+        2010 => [
+            {
+                title => 'Nonhierarchical OOP',
+                author => 'Shawn Moore',
+                schedule_url => '',
+                slide_url => 'http://sartak.org/talks/osdc.tw-2010/nonhierarchical-oop/'
+            },
+        ],
+    },
+
+
 };
 
 my $output;
