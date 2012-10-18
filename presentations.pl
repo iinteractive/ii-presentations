@@ -579,28 +579,29 @@ __DATA__
                                     <h2><: $year :></h2>
                                     <div class="well">
                                         : for $talks[$conference][$year] -> $talk {
-                                        <div class="row">
+                                        <div class="row" style="margin-left: 0px; margin-bottom: 3px; border-bottom: 1px solid #ccc">
                                             <div class="span6">
-                                                <strong><: $talk.title :></strong> <em>&mdash; <: $talk.author :></em>
+                                                <div><strong><: $talk.title :></strong></div>
+                                                <div style="font-size: 0.9em; margin-top: -3px; color: #888"><: $talk.author :></div>
                                             </div>
-                                            <div class="span5">
-                                              <div class="btn-group">
-                                                  : if $talk.slide_url {
-                                                      <a class="btn btn-large" target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a>
-                                                  : } else {
-                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  : }
-                                                  : if $talk.video_url {
-                                                      <a class="btn btn-large" target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a>
-                                                  : } else {
-                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  : }
-                                                  : if $talk.schedule_url {
-                                                      <a class="btn btn-large" target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a>
-                                                  : } else {
-                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                                  : }
-                                              </div>
+                                            <div class="span4">
+                                                <div class="btn-group pull-right" style="margin-top: 2px; ">
+                                                    : if $talk.slide_url {
+                                                        <a class="btn" target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a>
+                                                    : } else {
+                                                        <button class="btn" disabled="true"><i class="icon-picture icon-white"></i></button>
+                                                    : }
+                                                    : if $talk.video_url {
+                                                        <a class="btn" target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a>
+                                                    : } else {
+                                                        <button class="btn" disabled="true"><i class="icon-film icon-white"></i></button>
+                                                    : }
+                                                    : if $talk.schedule_url {
+                                                        <a class="btn" target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a>
+                                                    : } else {
+                                                        <button class="btn" disabled="true"><i class="icon-calendar icon-white"></i></button>
+                                                    : }
+                                                </div>
                                             </div>
                                         </div>
                                         : }
