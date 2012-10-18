@@ -486,82 +486,92 @@ __DATA__
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
-                padding-top: 40px;
-                padding-bottom: 40px;
+                padding-top: 20px;
+                padding-bottom: 0px;
                 background: #ffffff;
                 color: #242927;
             }
+
+            .footer {
+                padding: 20px 20px;
+                margin-top: 70px;
+                border-top: 1px solid #E5E5E5;
+                background-color: whiteSmoke;
+            }
         </style>
-        <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
     <body>
-        <div class="container">
-            <div class="hero-unit">
-                <img src="img/ii-logo-horiz-290.png" />
-                <p align="center">
-                    At Infinity, it is our conviction that the true value of
-                    Open Source software can only by found through
-                    participation.
+
+            <div align="center">
+                <img src="img/ii-logo-horiz-290.png" height="150" width="598" />
+                <p class="lead">
+                    <nobr>At Infinity, it is our conviction that the true value of Open Source</nobr>
+                    <br/>
+                    <nobr>software can only by found through participation.</nobr>
                 </p>
             </div>
-            <hr>
-            <div class="tabbable tabs-left">
-                <ul class="nav nav-tabs" id="conferences">
+        <div class="container">
+            <div class="accordian" id="conferences">
                 : for $talks.keys().sort().reverse() -> $conference {
-                    <li><a id="<: to_ident( $conference ) :>_conf" href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
-                : }
-                </ul>
-                <div class="tab-content">
-                    : for $talks.keys().sort().reverse() -> $conference {
-                    <div class="tab-pane" id="<: to_ident( $conference ) :>">
-                        : for $talks[$conference].keys().sort() -> $year {
-                        <h2><: $year :></h2>
-                            : for $talks[$conference][$year] -> $talk {
-                            <div class="row">
-                                <div class="span4">
-                                  <strong><: $talk.title :></strong>
-                                  : if $talk.schedule_url {
-                                  <a target="_blank" href="<: $talk.schedule_url :>">[link]</a>
-                                  : }
-                                </div>
-                                <div class="span2">
-                                    : my $author = $authors[$talk.author]
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <img src="<: $author.gravatar_url :>" height="20" /><: $talk.author :>
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a target="_blank" href="<: $author.github_url :>">Github</a></li>
-                                            <li><a target="_blank" href="<: $author.cpan_url :>">CPAN</a></li>
-                                        </ul>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#<: to_ident( $conference ) :>">
+                                <: $conference :>
+                            </a>
+                        </div>
+                        <div id="<: to_ident( $conference ) :>" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                : for $talks[$conference].keys().sort() -> $year {
+                                <h2><: $year :></h2>
+                                <div class="well">
+                                    : for $talks[$conference][$year] -> $talk {
+                                    <div class="row">
+                                        <div class="span6">
+                                            <strong><: $talk.title :></strong> <em>&mdash; <: $talk.author :></em>
+                                        </div>
+                                        <div class="span5">
+                                          <div class="btn-group">
+                                              : if $talk.slide_url {
+                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a></button>
+                                              : } else {
+                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                              : }
+                                              : if $talk.video_url {
+                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a></button>
+                                              : } else {
+                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                              : }
+                                              : if $talk.schedule_url {
+                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a></button>
+                                              : } else {
+                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                              : }
+                                          </div>
+                                        </div>
                                     </div>
+                                    : }
                                 </div>
+                                : }
                             </div>
-                          : }
-                        : }
+                        </div>
                     </div>
-                    : }
-                </div>
+                : }
             </div>
-            <hr>
-            <footer>
-                <p>&copy; Infinity Interactive 2012</p>
-            </footer>
         </div>
+
+        <footer class="footer">
+            <p>&copy; Infinity Interactive 2012</p>
+        </footer>
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="javascript">
         $(function () {
-            $('#conferences a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            });
-            $('#yapc__na_conf').tab('show');
+            $(".collapse").collapse()
         });
     </script>
     </body>
