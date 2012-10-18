@@ -61,6 +61,7 @@ my $talks = {
                 title => "Moose - A post modern object system for Perl 5",
                 author => 'Stevan Little',
                 schedule_url => 'http://conferences.mongueurs.net/yn2008/talk/1061',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/moose-a-post-modern-object-system-for-perl'
             },
             {
                 title => "Horizontal Code Resuse with Moose::Role",
@@ -100,7 +101,8 @@ my $talks = {
             {
                 title => 'Modern Perl (Tuesday Keynote)',
                 author => 'Stevan Little',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2666'
+                schedule_url => 'http://yapc2010.com/yn2010/talk/2666',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/yapc-na-2010-tuesday-keynote'
             },
             {
                 title => 'Intro to Moose',
@@ -169,7 +171,8 @@ my $talks = {
             {
                 title => 'REST in the trenches - Jackalope part duex',
                 author => 'Stevan Little',
-                schedule_url => 'http://act.yapcna.org/2012/talk/35'
+                schedule_url => 'http://act.yapcna.org/2012/talk/35',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/rest-from-the-trenches'
             },
             {
                 title => 'Dependency Injection with Bread::Board',
@@ -215,6 +218,12 @@ my $talks = {
                 schedule_url => 'http://act.yapc.eu/ye2012/talk/4181',
                 slide_url => 'http://tozt.net/talks/bread_board_yapc_eu_2012.pdf',
             },
+            {
+                title => 'A MOP for Perl 5',
+                author => 'Stevan Little',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4069',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/perl-5-mop'
+            }
         ],
     },
     'YAPC::Asia' => {
@@ -334,7 +343,8 @@ my $talks = {
             {
                 title => 'Untitled No. 12',
                 author => 'Stevan Little',
-                schedule_url => 'http://www.perloasis.info/opw2010/talk/2499'
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2499',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/untitled-no-12'
             },
             {
                 title => 'Surviving in the Cruel, Unforgiving World',
@@ -383,7 +393,8 @@ my $talks = {
             {
                 title => 'Future Perl (Keynote)',
                 author => 'Stevan Little',
-                schedule_url => 'http://dcbpw.org/dcbpw2012/talk/4081'
+                schedule_url => 'http://dcbpw.org/dcbpw2012/talk/4081',
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/dc-baltimore-perl-workshop-keynote'
             },
             {
                 title => 'Introduction to Object Orientation',
@@ -472,8 +483,6 @@ __DATA__
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-
-        <!-- Le styles -->
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
@@ -484,18 +493,13 @@ __DATA__
             }
         </style>
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
     </head>
-
     <body>
-
         <div class="container">
-
             <div class="hero-unit">
                 <img src="img/ii-logo-horiz-290.png" />
                 <p align="center">
@@ -504,16 +508,13 @@ __DATA__
                     participation.
                 </p>
             </div>
-
             <hr>
-
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
                 : for $talks.keys().sort().reverse() -> $conference {
                     <li><a id="<: to_ident( $conference ) :>_conf" href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
                 : }
                 </ul>
-
                 <div class="tab-content">
                     : for $talks.keys().sort().reverse() -> $conference {
                     <div class="tab-pane" id="<: to_ident( $conference ) :>">
@@ -547,20 +548,11 @@ __DATA__
                     : }
                 </div>
             </div>
-
-
-
             <hr>
-
             <footer>
                 <p>&copy; Infinity Interactive 2012</p>
             </footer>
-
         </div>
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
     <script type="javascript">
@@ -571,9 +563,6 @@ __DATA__
             });
             $('#yapc__na_conf').tab('show');
         });
-    </script>
-    <script type="text/javascript">
-        $('#yapc__na_conf').tab('show');
     </script>
     </body>
 </html>
