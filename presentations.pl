@@ -158,6 +158,12 @@ my $talks = {
                 schedule_url => 'http://www.yapc2011.us/yn2011/talk/3519',
                 slide_url => 'http://sartak.org/talks/yapc-na-2011/cpandoc/'
             },
+            {
+                title => 'All Your Code Gonna Git Got',
+                author => 'John Anderson',
+                schedule_url => 'http://www.yapc2011.us/yn2011/talk/3495',
+                slide_url => 'http://sartak.org/talks/yapc-na-2011/cpandoc/'
+            },
         ],
         2012 => [
             {
@@ -191,6 +197,12 @@ my $talks = {
                 schedule_url => 'http://act.yapcna.org/2012/talk/173',
                 slide_url => 'http://sartak.org/talks/yapc-na-2012/git-status-tackle/'
             },
+            {
+                title => mark_raw('H&#299;D'),
+                author => 'John Anderson',
+                schedule_url => 'http://act.yapcna.org/2012/talk/168',
+                slide_url => 'http://www.slideshare.net/genehackdotorg/hd-14787416',
+            }
         ],
     },
     'YAPC::EU' => {
@@ -315,7 +327,12 @@ my $talks = {
                 title => "The Case for switching to Python - A Manager's Guide to Moose",
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1523'
-            }
+            },
+            {
+                title => 'Best Practices Are A PITA',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2008/talk/1628'
+            },
         ],
         2010 => [
             {
@@ -327,6 +344,11 @@ my $talks = {
                 title => 'Inversion of Control and Dependency Injection with Bread::Board',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2010/talk/3030'
+            },
+            {
+                title => 'Perl FitBit API',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2010/talk/3081'
             }
         ],
         2011 => [
@@ -339,7 +361,12 @@ my $talks = {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2011/talk/3618'
-            }
+            },
+            {
+                title => 'Examine Yr Moose',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2011/talk/3879',
+            },
         ],
     },
     'Orlando Perl Workshop' => {
