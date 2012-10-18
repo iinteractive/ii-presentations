@@ -321,7 +321,8 @@ my $talks = {
             {
                 title => 'The Evolution of Path::Dispatcher',
                 author => 'Shawn Moore',
-                schedule_url => 'http://pghpw.org/ppw2010/talk/3002'
+                schedule_url => 'http://pghpw.org/ppw2010/talk/3002',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/',
             },
             {
                 title => 'Inversion of Control and Dependency Injection with Bread::Board',
