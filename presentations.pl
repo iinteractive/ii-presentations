@@ -505,7 +505,7 @@ __DATA__
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
                 : for $talks.keys().sort().reverse() -> $conference {
-                    <li><a href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
+                    <li><a id="<: to_ident( $conference ) :>_conf" href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
                 : }
                 </ul>
 
@@ -563,7 +563,8 @@ __DATA__
             $('#conferences a').click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
-            })
+            });
+            $('#yapc__na_conf').tab('show');
         });
     </script>
     </body>
