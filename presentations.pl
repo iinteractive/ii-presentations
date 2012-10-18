@@ -510,7 +510,7 @@ __DATA__
                 height: 50px;
                 clear: both;
                 border-top: 1px solid #E5E5E5;
-                background-color: whiteSmoke;
+                background-color: #ddd;
             }
 
         </style>
@@ -552,17 +552,17 @@ __DATA__
                                             <div class="span5">
                                               <div class="btn-group">
                                                   : if $talk.slide_url {
-                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" onclick="window.open('<: $talk.slide_url :>')"><i class="icon-picture"></i></button>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
                                                   : }
                                                   : if $talk.video_url {
-                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a></button>
+                                                      <button class="btn btn-large" onclick="window.open('<: $talk.video_url :>')"><i class="icon-film"></i></button>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
                                                   : }
                                                   : if $talk.schedule_url {
-                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a></button>
+                                                      <button class="btn btn-large" onclick="window.open('<: $talk.schedule_url :>')"><i class="icon-calendar"></i></button>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
                                                   : }
