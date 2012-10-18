@@ -3,7 +3,8 @@
 use strict;
 use warnings;
 
-use Template;
+use Data::Section::Simple;
+use Text::Xslate qw/ mark_raw /;
 
 my $authors = {
     'Stevan Little' => {
@@ -23,22 +24,22 @@ my $authors = {
     },
     'Jesse Luehrs' => {
         gravatar_url => 'http://www.gravatar.com/avatar/88766de7a058697d3d0335b8d384fd2a.png',
-        github_url => 'https://github.com/doy',        
+        github_url => 'https://github.com/doy',
         cpan_url => 'https://www.metacpan.org/author/DOY'
     },
     'Jay Hannah' => {
         gravatar_url => 'http://www.gravatar.com/avatar/e45a33b946514b3720ca409b3b876f66.png',
-        github_url => 'https://github.com/jhannah',        
+        github_url => 'https://github.com/jhannah',
         cpan_url => 'https://www.metacpan.org/author/JHANNAH'
     },
     'John Anderson' => {
         gravatar_url => 'http://www.gravatar.com/avatar/025d30f04795e1efc142701e4ac89bfd.png',
-        github_url => 'https://github.com/genehack',        
+        github_url => 'https://github.com/genehack',
         cpan_url => 'https://www.metacpan.org/author/GENEHACK'
     },
     'Dylan Hardison' => {
         gravatar_url => 'http://www.gravatar.com/avatar/ea4290f897444ad075f1c33fecc24f8f.png',
-        github_url => 'https://github.com/dylanwh',        
+        github_url => 'https://github.com/dylanwh',
         cpan_url => 'https://www.metacpan.org/author/DHARDISON'
     }
 };
@@ -88,6 +89,11 @@ my $talks = {
                 title => 'What Haskell did to my brain',
                 author => 'Yuval Kogman',
                 schedule_url => 'http://yapc10.org/yn2009/talk/1956'
+            },
+            {
+                title => 'Botting NetHack with TAEB',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://yapc10.org/yn2009/talk/2148',
             },
         ],
         2010 => [
@@ -142,6 +148,12 @@ my $talks = {
                 schedule_url => 'http://www.yapc2011.us/yn2011/talk/3197',
                 slide_url => 'http://sartak.org/talks/yapc-na-2011/announcing-announcements/'
             },
+            {
+                title => 'cpandoc',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.yapc2011.us/yn2011/talk/3519',
+                slide_url => 'http://sartak.org/talks/yapc-na-2011/cpandoc/'
+            },
         ],
         2012 => [
             {
@@ -163,7 +175,13 @@ my $talks = {
                 title => 'Dependency Injection with Bread::Board',
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://act.yapcna.org/2012/talk/147'
-            }
+            },
+            {
+                title => 'git-status-tackle',
+                author => 'Shawn Moore',
+                schedule_url => 'http://act.yapcna.org/2012/talk/173',
+                slide_url => 'http://sartak.org/talks/yapc-na-2012/git-status-tackle/'
+            },
         ],
     },
     'YAPC::EU' => {
@@ -179,20 +197,55 @@ my $talks = {
                 schedule_url => 'http://vienna.yapceurope.org/ye2007/talk/648'
             }
         ],
+        2012 => [
+            {
+                title => 'Moose Role Usage Patterns',
+                author => 'Shawn Moore',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4150',
+                slide_url => 'http://sartak.org/talks/yapc-eu-2012/role-usage-patterns/'
+            },
+            {
+                title => 'TIMTOWTDI in 2012',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4182',
+            },
+            {
+                title => 'Dependency Injection with Bread::Board',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://act.yapc.eu/ye2012/talk/4181',
+                slide_url => 'http://tozt.net/talks/bread_board_yapc_eu_2012.pdf',
+            },
+        ],
     },
     'YAPC::Asia' => {
+        2009 => [
+            {
+                title => 'API Design',
+                author => 'Shawn Moore',
+                schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2188',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/api-design/'
+            },
+            {
+                title => '(Parameterized) Roles',
+                author => 'Shawn Moore',
+                schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2261',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/'
+            },
+        ],
         2010 => [
             {
                 title => 'The Evolution of Path::Dispatcher',
                 author => 'Shawn Moore',
-                schedule_url => 'http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45'
+                schedule_url => 'http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/'
             },
         ],
         2011 => [
             {
                 title => 'DTrace: printf debugging for seventh-level wizards',
                 author => 'Shawn Moore',
-                schedule_url => 'http://yapcasia.org/2011/talk/23.html'
+                schedule_url => 'http://yapcasia.org/2011/talk/23.html',
+                slide_url => 'http://sartak.org/talks/yapc-asia-2011/dtrace/'
             }
         ]
     },
@@ -225,11 +278,11 @@ my $talks = {
                 title => 'Horizontal Code Reuse with Moose::Role',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2007/talk/714'
-            }            
+            }
         ],
         2008 => [
             {
-                title => '<strike>R</strike>DBMs',
+                title => mark_raw( '<strike>R</strike>DBMs' ),
                 author => 'Yuval Kogman',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1543'
             },
@@ -237,12 +290,12 @@ my $talks = {
                 title => 'Moose: A Postmodern Object System for Perl 5',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1522'
-            },               
+            },
             {
                 title => "The Case for switching to Python - A Manager's Guide to Moose",
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1523'
-            }               
+            }
         ],
         2010 => [
             {
@@ -296,12 +349,12 @@ my $talks = {
         ],
         2011 => [
             {
-                title => '‎Managing assets: Keeping 7.5G of media files out of subversion‎',
+                title => 'Managing assets: Keeping 7.5G of media files out of subversion',
                 author => 'Dylan Hardison',
                 schedule_url => 'http://www.perloasis.info/opw2011/talk/3181'
             },
             {
-                title => '‎Getting Code for Free - A Love Letter to Open Source‎ (Keynote)',
+                title => 'Getting Code for Free - A Love Letter to Open Source (Keynote)',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2011/talk/3182'
             }
@@ -316,6 +369,12 @@ my $talks = {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2012/talk/3966'
+            },
+            {
+                title => 'DTrace: printf debugging for seventh-level wizards',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3868',
+                slide_url => 'http://sartak.org/talks/perl-oasis-2012/dtrace/'
             }
         ]
     },
@@ -333,6 +392,30 @@ my $talks = {
             }
         ],
     },
+    'Frozen Perl' => {
+        2008 => [
+            {
+                title => 'Template::Declare',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2008/talk/858',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2008/template-declare/frozen-perl.2008.txt'
+            },
+        ],
+        2009 => [
+            {
+                title => 'Devel::REPL and Carp::REPL',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2009/talk/1663',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2009/devel-repl/'
+            },
+            {
+                title => 'Introduction to Moose',
+                author => 'Shawn Moore',
+                schedule_url => 'http://www.frozen-perl.org/mpw2009/talk/1687',
+                slide_url => 'http://sartak.org/talks/frozen-perl-2009/moose/'
+            },
+        ],
+    },
     'E-LAMP Nashville' => {
         2009 => [
             {
@@ -340,32 +423,47 @@ my $talks = {
                 author => 'Stevan Little'
             }
         ],
-    }
+    },
+    'OSDC Taiwan' => {
+        2010 => [
+            {
+                title => 'Nonhierarchical OOP',
+                author => 'Shawn Moore',
+                schedule_url => '',
+                slide_url => 'http://sartak.org/talks/osdc.tw-2010/nonhierarchical-oop/'
+            },
+        ],
+    },
+
+
 };
 
-my $output;
-Template->new->process(
-    \*DATA, 
-    {
-        talks   => $talks,
-        authors => $authors,
-        to_ident => sub {
-            my $ident = lc $_[0];
-            $ident =~ s/\s/_/g;
-            $ident =~ s/\-/_/g;
-            $ident =~ s/\//_/g;            
-            $ident =~ s/\:/_/g;
-            $ident;
-        }
+my $vpath = Data::Section::Simple->new()->get_data_section();
+my $tx    = Text::Xslate->new(
+  function => {
+    to_ident => sub {
+      my $ident = lc $_[0];
+      $ident =~ s/\s/_/g;
+      $ident =~ s/\-/_/g;
+      $ident =~ s/\//_/g;
+      $ident =~ s/\:/_/g;
+      $ident;
     },
-    \$output
+  },
+  path => [ $vpath ],
 );
+
+my $output = $tx->render( 'template.tx' , {
+  talks   => $talks,
+  authors => $authors,
+});
 
 print $output;
 
 1;
 
 __DATA__
+@@ template.tx
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -411,48 +509,51 @@ __DATA__
 
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
-                [% FOREACH conference IN talks.keys.sort.reverse %]
-                    <li><a href="#[% to_ident( conference ) %]" data-toggle="pill">[% conference %]</a></li>
-                [% END %]
+                : for $talks.keys().sort().reverse() -> $conference {
+                    <li><a id="<: to_ident( $conference ) :>_conf" href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
+                : }
                 </ul>
-                 
-                <div class="tab-content" style="height: 500; overflow: auto">
-                [% FOREACH conference IN talks.keys.sort.reverse %]
-                    <div class="tab-pane" id="[% to_ident( conference ) %]">
-                    [% FOREACH year IN talks.$conference.keys.sort %]
-                        <h2>[% year %]</h2>
-                        [% FOREACH talk IN talks.$conference.$year %]
+
+                <div class="tab-content">
+                    : for $talks.keys().sort().reverse() -> $conference {
+                    <div class="tab-pane" id="<: to_ident( $conference ) :>">
+                        : for $talks[$conference].keys().sort() -> $year {
+                        <h2><: $year :></h2>
+                            : for $talks[$conference][$year] -> $talk {
                             <div class="row">
                                 <div class="span4">
-                                    <strong>[% talk.title %]</strong> [% IF talk.schedule_url %]<a target="_blank" href="[% talk.schedule_url %]">[link]</a>[% END %]
+                                  <strong><: $talk.title :></strong>
+                                  : if $talk.schedule_url {
+                                  <a target="_blank" href="<: $talk.schedule_url :>">[link]</a>
+                                  : }
                                 </div>
                                 <div class="span2">
-                                    [% SET author = talk.author %] 
+                                    : my $author = $authors[$talk.author]
                                     <div class="btn-group">
                                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <img src="[% authors.$author.gravatar_url %]" height="20" /> [% author %]
+                                            <img src="<: $author.gravatar_url :>" height="20" /><: $talk.author :>
                                             <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a target="_blank" href="[% authors.$author.github_url %]">Github</a></li>
-                                            <li><a target="_blank" href="[% authors.$author.cpan_url %]">CPAN</a></li>
+                                            <li><a target="_blank" href="<: $author.github_url :>">Github</a></li>
+                                            <li><a target="_blank" href="<: $author.cpan_url :>">CPAN</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                        [% END %]
-                    [% END %]
+                          : }
+                        : }
                     </div>
-                [% END %]
+                    : }
                 </div>
             </div>
-        
+
 
 
             <hr>
 
-            <footer align="center">
-                <p>&copy; 2012 Infinity Interactive, Inc.</p>
+            <footer>
+                <p>&copy; Infinity Interactive 2012</p>
             </footer>
 
         </div>
@@ -467,14 +568,12 @@ __DATA__
             $('#conferences a').click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
-            })
+            });
+            $('#yapc__na_conf').tab('show');
         });
-    </scrip>
+    </script>
+    <script type="text/javascript">
+        $('#yapc__na_conf').tab('show');
+    </script>
     </body>
 </html>
-
-
-
-
-
-
