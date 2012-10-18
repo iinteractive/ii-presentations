@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Data::Section::Simple;
-use Text::Xslate;
+use Text::Xslate qw/ mark_raw /;
 
 my $authors = {
     'Stevan Little' => {
@@ -282,7 +282,7 @@ my $talks = {
         ],
         2008 => [
             {
-                title => '<strike>R</strike>DBMs',
+                title => mark_raw( '<strike>R</strike>DBMs' ),
                 author => 'Yuval Kogman',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1543'
             },
