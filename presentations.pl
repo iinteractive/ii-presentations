@@ -102,12 +102,14 @@ my $talks = {
                 title => 'Modern Perl (Tuesday Keynote)',
                 author => 'Stevan Little',
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2666',
-                slide_url => 'https://speakerdeck.com/u/stevan_little/p/yapc-na-2010-tuesday-keynote'
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/yapc-na-2010-tuesday-keynote',
+                video_url => 'http://www.presentingperl.org/yn2010/modern-perl/'
             },
             {
                 title => 'Intro to Moose',
                 author => 'Stevan Little',
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2720',
+                video_url => 'http://www.presentingperl.org/yn2010/intro-to-moose/'
             },
             {
                 title => 'Extending Moose',
@@ -161,12 +163,14 @@ my $talks = {
             {
                 title => 'Tweakers Anonymous',
                 author => 'John Anderson',
-                schedule_url => 'http://act.yapcna.org/2012/talk/127'
+                schedule_url => 'http://act.yapcna.org/2012/talk/127',
+                video_url => 'http://www.youtube.com/watch?v=HVEDjLPZovA'
             },
             {
                 title => 'Code Fast, Die Young, Throw Structured Exceptions',
                 author => 'John Anderson',
-                schedule_url => 'http://act.yapcna.org/2012/talk/126'
+                schedule_url => 'http://act.yapcna.org/2012/talk/126',
+                video_url => 'http://www.youtube.com/watch?v=O1b-z7QvVW0'
             },
             {
                 title => 'REST in the trenches - Jackalope part duex',
@@ -177,7 +181,9 @@ my $talks = {
             {
                 title => 'Dependency Injection with Bread::Board',
                 author => 'Jesse Luehrs',
-                schedule_url => 'http://act.yapcna.org/2012/talk/147'
+                schedule_url => 'http://act.yapcna.org/2012/talk/147',
+                video_url => 'http://youtu.be/DhhaOQWoOpw',
+                slide_url => 'http://tozt.net/talks/bread_board_yapc_na_2012/'
             },
             {
                 title => 'git-status-tackle',
@@ -232,13 +238,15 @@ my $talks = {
                 title => 'API Design',
                 author => 'Shawn Moore',
                 schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2188',
-                slide_url => 'http://sartak.org/talks/yapc-asia-2009/api-design/'
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/api-design/',
+                video_url => 'http://www.nicovideo.jp/watch/sm8627720'
             },
             {
                 title => '(Parameterized) Roles',
                 author => 'Shawn Moore',
                 schedule_url => 'http://conferences.yapcasia.org/ya2009/talk/2261',
-                slide_url => 'http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/'
+                slide_url => 'http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/',
+                video_url => 'http://www.nicovideo.jp/watch/sm8674742'
             },
         ],
         2010 => [
@@ -254,7 +262,8 @@ my $talks = {
                 title => 'DTrace: printf debugging for seventh-level wizards',
                 author => 'Shawn Moore',
                 schedule_url => 'http://yapcasia.org/2011/talk/23.html',
-                slide_url => 'http://sartak.org/talks/yapc-asia-2011/dtrace/'
+                slide_url => 'http://sartak.org/talks/yapc-asia-2011/dtrace/',
+                video_url => 'http://www.youtube.com/watch?v=GccTqjEWAp4'
             }
         ]
     },
@@ -272,7 +281,8 @@ my $talks = {
             {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
-                schedule_url => 'http://conferences.yapceurope.org/lpw2011/talk/3885'
+                schedule_url => 'http://conferences.yapceurope.org/lpw2011/talk/3885',
+                video_url => 'http://www.presentingperl.org/lpw2011/a-brave-new-perl-world/'
             }
         ]
     },
@@ -344,47 +354,71 @@ my $talks = {
                 title => 'Untitled No. 12',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2010/talk/2499',
-                slide_url => 'https://speakerdeck.com/u/stevan_little/p/untitled-no-12'
+                slide_url => 'https://speakerdeck.com/u/stevan_little/p/untitled-no-12',
+                video_url => 'http://www.presentingperl.org/opw2010/untitled-no-12/'
             },
             {
                 title => 'Surviving in the Cruel, Unforgiving World',
                 author => 'Shawn Moore',
-                schedule_url => 'http://www.perloasis.info/opw2010/talk/2476'
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2476',
+                video_url => 'http://www.presentingperl.org/opw2010/cruel-world/'
             },
             {
                 title => 'How to Debianize a CPAN Dist',
                 author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2010/talk/2483'
+                schedule_url => 'http://www.perloasis.info/opw2010/talk/2483',
+                video_url => 'http://www.presentingperl.org/opw2010/debianize/'
             }
         ],
         2011 => [
             {
                 title => 'Managing assets: Keeping 7.5G of media files out of subversion',
                 author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2011/talk/3181'
+                schedule_url => 'http://www.perloasis.info/opw2011/talk/3181',
+                video_url => 'http://www.presentingperl.org/opw2011/managing-assets/'
             },
             {
                 title => 'Getting Code for Free - A Love Letter to Open Source (Keynote)',
                 author => 'Stevan Little',
-                schedule_url => 'http://www.perloasis.info/opw2011/talk/3182'
+                schedule_url => 'http://www.perloasis.info/opw2011/talk/3182',
+                video_url => 'http://www.presentingperl.org/opw2011/code-for-free/'
+            },
+            {
+                title => 'Bicycle Commuting for the Telecommuter',
+                author => 'Dylan Hardison',
+                video_url => 'http://www.presentingperl.org/opw2011/bicycle-commuting-for-the-telecommuter/'
             }
         ],
         2012 => [
             {
                 title => 'Organizing Technical Groups in Meatspace',
                 author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2012/talk/3928'
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3928',
+                video_url => 'http://www.presentingperl.org/opw2012/organising-technical-groups-in-meatspace/'
             },
             {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
-                schedule_url => 'http://www.perloasis.info/opw2012/talk/3966'
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3966',
+                video_url => 'http://www.presentingperl.org/opw2012/a-brave-new-perl-world/'
             },
             {
                 title => 'DTrace: printf debugging for seventh-level wizards',
                 author => 'Shawn Moore',
                 schedule_url => 'http://www.perloasis.info/opw2012/talk/3868',
-                slide_url => 'http://sartak.org/talks/perl-oasis-2012/dtrace/'
+                slide_url => 'http://sartak.org/talks/perl-oasis-2012/dtrace/',
+                video_url => 'http://www.presentingperl.org/opw2012/dtrace/'
+            },
+            {
+                title => 'Life Fast Die Young',
+                author => 'John Anderson',
+                video_url => 'http://www.presentingperl.org/opw2012/life-fast-die-young/'
+            },
+            {
+                title => 'Tweakers Anonymous',
+                author => 'John Anderson',
+                schedule_url => 'http://www.perloasis.info/opw2012/talk/3933',
+                video_url => 'http://www.presentingperl.org/opw2012/tweakers-anonymous/'
             }
         ]
     },
@@ -552,17 +586,17 @@ __DATA__
                                             <div class="span5">
                                               <div class="btn-group">
                                                   : if $talk.slide_url {
-                                                      <button class="btn btn-large" onclick="window.open('<: $talk.slide_url :>')"><i class="icon-picture"></i></button>
+                                                      <a class="btn btn-large" target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
                                                   : }
                                                   : if $talk.video_url {
-                                                      <button class="btn btn-large" onclick="window.open('<: $talk.video_url :>')"><i class="icon-film"></i></button>
+                                                      <a class="btn btn-large" target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
                                                   : }
                                                   : if $talk.schedule_url {
-                                                      <button class="btn btn-large" onclick="window.open('<: $talk.schedule_url :>')"><i class="icon-calendar"></i></button>
+                                                      <a class="btn btn-large" target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a>
                                                   : } else {
                                                       <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
                                                   : }
