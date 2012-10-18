@@ -349,12 +349,12 @@ my $talks = {
         ],
         2011 => [
             {
-                title => '‎Managing assets: Keeping 7.5G of media files out of subversion‎',
+                title => 'Managing assets: Keeping 7.5G of media files out of subversion',
                 author => 'Dylan Hardison',
                 schedule_url => 'http://www.perloasis.info/opw2011/talk/3181'
             },
             {
-                title => '‎Getting Code for Free - A Love Letter to Open Source‎ (Keynote)',
+                title => 'Getting Code for Free - A Love Letter to Open Source (Keynote)',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2011/talk/3182'
             }
