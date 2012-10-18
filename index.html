@@ -8,19 +8,34 @@
         <meta name="author" content="">
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
+            html {
+                height: 100%;
+            }
+
             body {
-                padding-top: 20px;
-                padding-bottom: 0px;
+                height: 100%;
                 background: #ffffff;
                 color: #242927;
             }
 
+            #wrap {
+                min-height: 100%;
+            }
+
+            #main {
+                overflow:auto;
+                padding-bottom: 70px; /* this needs to be bigger than footer height*/
+            }
+
             .footer {
-                padding: 20px 20px;
-                margin-top: 70px;
+                position: relative;
+                margin-top: -50px;
+                height: 50px;
+                clear: both;
                 border-top: 1px solid #E5E5E5;
                 background-color: whiteSmoke;
             }
+
         </style>
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -28,8 +43,9 @@
         <![endif]-->
     </head>
     <body>
-
-            <div align="center">
+    <div id="wrap">
+        <div id="main" class="container clear-top">
+            <div style="margin-top: 20px" align="center">
                 <img src="img/ii-logo-horiz-290.png" height="150" width="598" />
                 <p class="lead">
                     <nobr>At Infinity, it is our conviction that the true value of Open Source</nobr>
@@ -37,945 +53,949 @@
                     <nobr>software can only by found through participation.</nobr>
                 </p>
             </div>
-        <div class="container">
-            <div class="accordian" id="conferences">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__na">
-                                YAPC::NA
-                            </a>
-                        </div>
-                        <div id="yapc__na" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2006</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Moose, it&#39;s the new Camel</strong> <em>&mdash; Stevan Little</em>
+            <div class="container">
+                <div class="accordian" id="conferences">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__na">
+                                    YAPC::NA
+                                </a>
+                            </div>
+                            <div id="yapc__na" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2006</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Moose, it&#39;s the new Camel</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Compiling Perl 6</strong> <em>&mdash; Yuval Kogman</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2008</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Moose - A post modern object system for Perl 5</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/moose-a-post-modern-object-system-for-perl"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://conferences.mongueurs.net/yn2008/talk/1061"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Compiling Perl 6</strong> <em>&mdash; Yuval Kogman</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Horizontal Code Reuse with Moose::Role</strong> <em>&mdash; Stevan Little</em>
+                                    <h2>2008</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Moose - A post modern object system for Perl 5</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/moose-a-post-modern-object-system-for-perl"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://conferences.mongueurs.net/yn2008/talk/1061"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://conferences.mongueurs.net/yn2008/talk/1063"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2009</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>KiokuDB - A Real World Introduction</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1914"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>To Moose or Not To Moose</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1941"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Horizontal Code Reuse with Moose::Role</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://conferences.mongueurs.net/yn2008/talk/1063"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Extending Moose for Applications</strong> <em>&mdash; Shawn Moore</em>
+                                    <h2>2009</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>KiokuDB - A Real World Introduction</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1914"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2009/extending-moose/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1880"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>To Moose or Not To Moose</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1941"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>What Haskell did to my brain</strong> <em>&mdash; Yuval Kogman</em>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Extending Moose for Applications</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2009/extending-moose/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1880"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1956"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>What Haskell did to my brain</strong> <em>&mdash; Yuval Kogman</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/1956"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Botting NetHack with TAEB</strong> <em>&mdash; Jesse Luehrs</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/2148"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2010</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Modern Perl (Tuesday Keynote)</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/yapc-na-2010-tuesday-keynote"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2666"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Intro to Moose</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2720"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Extending Moose</strong> <em>&mdash; Jesse Luehrs</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/extending_moose_yapc_na_2010/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2646"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Botting NetHack with TAEB</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc10.org/yn2009/talk/2148"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Hey! Path::Dispatcher kicks ass!</strong> <em>&mdash; Shawn Moore</em>
+                                    <h2>2010</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Modern Perl (Tuesday Keynote)</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/yapc-na-2010-tuesday-keynote"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2666"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2010/path-dispatcher/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2642"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Intro to Moose</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2720"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Catalyst in the wild: omnihotels.com</strong> <em>&mdash; Jay Hannah</em>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Extending Moose</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/extending_moose_yapc_na_2010/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2646"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2934"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Hey! Path::Dispatcher kicks ass!</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2010/path-dispatcher/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2642"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>App::Termcast - share your terminals!</strong> <em>&mdash; Jesse Luehrs</em>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Catalyst in the wild: omnihotels.com</strong> <em>&mdash; Jay Hannah</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2934"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2647"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2011</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Jackalope</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3252"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>OX - The hardest working two letters in Perl</strong> <em>&mdash; Jesse Luehrs</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/ox_yapc_na_2011/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3251"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Announcing Announcements</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2011/announcing-announcements/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3197"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>cpandoc</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2011/cpandoc/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3519"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>App::Termcast - share your terminals!</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapc2010.com/yn2010/talk/2647"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <h2>2012</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Tweakers Anonymous</strong> <em>&mdash; John Anderson</em>
+                                    <h2>2011</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Jackalope</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3252"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/127"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>OX - The hardest working two letters in Perl</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/ox_yapc_na_2011/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3251"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Announcing Announcements</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2011/announcing-announcements/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3197"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>cpandoc</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2011/cpandoc/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.yapc2011.us/yn2011/talk/3519"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Code Fast, Die Young, Throw Structured Exceptions</strong> <em>&mdash; John Anderson</em>
+                                    <h2>2012</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Tweakers Anonymous</strong> <em>&mdash; John Anderson</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/127"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/126"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Code Fast, Die Young, Throw Structured Exceptions</strong> <em>&mdash; John Anderson</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/126"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>REST in the trenches - Jackalope part duex</strong> <em>&mdash; Stevan Little</em>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>REST in the trenches - Jackalope part duex</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/rest-from-the-trenches"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/35"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/rest-from-the-trenches"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/35"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Dependency Injection with Bread::Board</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/147"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Dependency Injection with Bread::Board</strong> <em>&mdash; Jesse Luehrs</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/147"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>git-status-tackle</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2012/git-status-tackle/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/173"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>git-status-tackle</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-na-2012/git-status-tackle/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapcna.org/2012/talk/173"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__eu">
-                                YAPC::EU
-                            </a>
-                        </div>
-                        <div id="yapc__eu" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2007</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Object Meta Programming</strong> <em>&mdash; Yuval Kogman</em>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__eu">
+                                    YAPC::EU
+                                </a>
+                            </div>
+                            <div id="yapc__eu" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2007</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Object Meta Programming</strong> <em>&mdash; Yuval Kogman</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://vienna.yapceurope.org/ye2007/talk/662"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://vienna.yapceurope.org/ye2007/talk/662"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Introduction to Moose</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://vienna.yapceurope.org/ye2007/talk/648"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2012</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Moose Role Usage Patterns</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-eu-2012/role-usage-patterns/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4150"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Introduction to Moose</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://vienna.yapceurope.org/ye2007/talk/648"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>TIMTOWTDI in 2012</strong> <em>&mdash; Jesse Luehrs</em>
+                                    <h2>2012</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Moose Role Usage Patterns</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-eu-2012/role-usage-patterns/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4150"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4182"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>TIMTOWTDI in 2012</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4182"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Dependency Injection with Bread::Board</strong> <em>&mdash; Jesse Luehrs</em>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Dependency Injection with Bread::Board</strong> <em>&mdash; Jesse Luehrs</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/bread_board_yapc_eu_2012.pdf"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4181"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://tozt.net/talks/bread_board_yapc_eu_2012.pdf"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4181"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>A MOP for Perl 5</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/perl-5-mop"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4069"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>A MOP for Perl 5</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/perl-5-mop"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://act.yapc.eu/ye2012/talk/4069"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__asia">
-                                YAPC::Asia
-                            </a>
-                        </div>
-                        <div id="yapc__asia" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2009</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>API Design</strong> <em>&mdash; Shawn Moore</em>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#yapc__asia">
+                                    YAPC::Asia
+                                </a>
+                            </div>
+                            <div id="yapc__asia" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2009</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>API Design</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2009/api-design/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://conferences.yapcasia.org/ya2009/talk/2188"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2009/api-design/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://conferences.yapcasia.org/ya2009/talk/2188"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>(Parameterized) Roles</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://conferences.yapcasia.org/ya2009/talk/2261"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2010</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>The Evolution of Path::Dispatcher</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>(Parameterized) Roles</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2009/(parameterized)-roles/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://conferences.yapcasia.org/ya2009/talk/2261"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <h2>2011</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>DTrace: printf debugging for seventh-level wizards</strong> <em>&mdash; Shawn Moore</em>
+                                    <h2>2010</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>The Evolution of Path::Dispatcher</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2011/dtrace/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://yapcasia.org/2011/talk/23.html"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                    </div>
+                                    <h2>2011</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>DTrace: printf debugging for seventh-level wizards</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/yapc-asia-2011/dtrace/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://yapcasia.org/2011/talk/23.html"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#washington_dc_baltimore_perl_workshop">
-                                Washington DC/Baltimore Perl Workshop
-                            </a>
-                        </div>
-                        <div id="washington_dc_baltimore_perl_workshop" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2012</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Future Perl (Keynote)</strong> <em>&mdash; Stevan Little</em>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#washington_dc_baltimore_perl_workshop">
+                                    Washington DC/Baltimore Perl Workshop
+                                </a>
+                            </div>
+                            <div id="washington_dc_baltimore_perl_workshop" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2012</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Future Perl (Keynote)</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/dc-baltimore-perl-workshop-keynote"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://dcbpw.org/dcbpw2012/talk/4081"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/dc-baltimore-perl-workshop-keynote"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://dcbpw.org/dcbpw2012/talk/4081"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Introduction to Object Orientation</strong> <em>&mdash; John Anderson</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://dcbpw.org/dcbpw2012/talk/4066"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Introduction to Object Orientation</strong> <em>&mdash; John Anderson</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://dcbpw.org/dcbpw2012/talk/4066"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#pittsburgh_perl_workshop">
-                                Pittsburgh Perl Workshop
-                            </a>
-                        </div>
-                        <div id="pittsburgh_perl_workshop" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2007</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Introduction to Moose</strong> <em>&mdash; Stevan Little</em>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#pittsburgh_perl_workshop">
+                                    Pittsburgh Perl Workshop
+                                </a>
+                            </div>
+                            <div id="pittsburgh_perl_workshop" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2007</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Introduction to Moose</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2007/talk/715"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2007/talk/715"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Horizontal Code Reuse with Moose::Role</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2007/talk/714"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2008</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong><strike>R</strike>DBMs</strong> <em>&mdash; Yuval Kogman</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1543"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Horizontal Code Reuse with Moose::Role</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2007/talk/714"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Moose: A Postmodern Object System for Perl 5</strong> <em>&mdash; Stevan Little</em>
+                                    <h2>2008</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong><strike>R</strike>DBMs</strong> <em>&mdash; Yuval Kogman</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1543"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1522"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Moose: A Postmodern Object System for Perl 5</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1522"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>The Case for switching to Python - A Manager&#39;s Guide to Moose</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1523"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2010</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>The Evolution of Path::Dispatcher</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2010/talk/3002"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Inversion of Control and Dependency Injection with Bread::Board</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2010/talk/3030"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>The Case for switching to Python - A Manager&#39;s Guide to Moose</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2008/talk/1523"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <h2>2011</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Perl and Git, Sitting In A Tree</strong> <em>&mdash; John Anderson</em>
+                                    <h2>2010</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>The Evolution of Path::Dispatcher</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2010/talk/3002"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2011/talk/3645"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Inversion of Control and Dependency Injection with Bread::Board</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2010/talk/3030"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
+                                    <h2>2011</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Perl and Git, Sitting In A Tree</strong> <em>&mdash; John Anderson</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2011/talk/3645"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2011/talk/3618"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://pghpw.org/ppw2011/talk/3618"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#orlando_perl_workshop">
-                                Orlando Perl Workshop
-                            </a>
-                        </div>
-                        <div id="orlando_perl_workshop" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2009</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Objects in Lua</strong> <em>&mdash; Dylan Hardison</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2009/talk/1703"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2010</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Untitled No. 12</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/untitled-no-12"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2499"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#orlando_perl_workshop">
+                                    Orlando Perl Workshop
+                                </a>
+                            </div>
+                            <div id="orlando_perl_workshop" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2009</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Objects in Lua</strong> <em>&mdash; Dylan Hardison</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2009/talk/1703"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Surviving in the Cruel, Unforgiving World</strong> <em>&mdash; Shawn Moore</em>
+                                    <h2>2010</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Untitled No. 12</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="https://speakerdeck.com/u/stevan_little/p/untitled-no-12"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2499"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2476"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Surviving in the Cruel, Unforgiving World</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2476"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>How to Debianize a CPAN Dist</strong> <em>&mdash; Dylan Hardison</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2483"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2011</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Managing assets: Keeping 7.5G of media files out of subversion</strong> <em>&mdash; Dylan Hardison</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2011/talk/3181"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Getting Code for Free - A Love Letter to Open Source (Keynote)</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2011/talk/3182"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>How to Debianize a CPAN Dist</strong> <em>&mdash; Dylan Hardison</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2010/talk/2483"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <h2>2012</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Organizing Technical Groups in Meatspace</strong> <em>&mdash; Dylan Hardison</em>
+                                    <h2>2011</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Managing assets: Keeping 7.5G of media files out of subversion</strong> <em>&mdash; Dylan Hardison</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2011/talk/3181"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3928"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Getting Code for Free - A Love Letter to Open Source (Keynote)</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2011/talk/3182"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
+                                    <h2>2012</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Organizing Technical Groups in Meatspace</strong> <em>&mdash; Dylan Hardison</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3928"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3966"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3966"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>DTrace: printf debugging for seventh-level wizards</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/perl-oasis-2012/dtrace/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3868"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>DTrace: printf debugging for seventh-level wizards</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/perl-oasis-2012/dtrace/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.perloasis.info/opw2012/talk/3868"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#osdc_taiwan">
-                                OSDC Taiwan
-                            </a>
-                        </div>
-                        <div id="osdc_taiwan" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2010</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Nonhierarchical OOP</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/osdc.tw-2010/nonhierarchical-oop/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#osdc_taiwan">
+                                    OSDC Taiwan
+                                </a>
+                            </div>
+                            <div id="osdc_taiwan" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2010</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Nonhierarchical OOP</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/osdc.tw-2010/nonhierarchical-oop/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#oscon">
-                                OSCON
-                            </a>
-                        </div>
-                        <div id="oscon" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2008</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Moose: A Postmodern Object System for Perl 5</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.oscon.com/oscon2008/public/schedule/detail/2469"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#oscon">
+                                    OSCON
+                                </a>
+                            </div>
+                            <div id="oscon" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2008</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Moose: A Postmodern Object System for Perl 5</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.oscon.com/oscon2008/public/schedule/detail/2469"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#london_perl_workshop">
-                                London Perl Workshop
-                            </a>
-                        </div>
-                        <div id="london_perl_workshop" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2011</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://conferences.yapceurope.org/lpw2011/talk/3885"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#london_perl_workshop">
+                                    London Perl Workshop
+                                </a>
+                            </div>
+                            <div id="london_perl_workshop" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2011</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>A Brave New Perl World</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://conferences.yapceurope.org/lpw2011/talk/3885"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#frozen_perl">
-                                Frozen Perl
-                            </a>
-                        </div>
-                        <div id="frozen_perl" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2008</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Template::Declare</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2008/template-declare/frozen-perl.2008.txt"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2008/talk/858"><i class="icon-calendar"></i></a></button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>2009</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Devel::REPL and Carp::REPL</strong> <em>&mdash; Shawn Moore</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2009/devel-repl/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2009/talk/1663"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#frozen_perl">
+                                    Frozen Perl
+                                </a>
+                            </div>
+                            <div id="frozen_perl" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2008</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Template::Declare</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2008/template-declare/frozen-perl.2008.txt"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2008/talk/858"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Introduction to Moose</strong> <em>&mdash; Shawn Moore</em>
+                                    <h2>2009</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Devel::REPL and Carp::REPL</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2009/devel-repl/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2009/talk/1663"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2009/moose/"><i class="icon-picture"></i></a></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2009/talk/1687"><i class="icon-calendar"></i></a></button>
-                                          </div>
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Introduction to Moose</strong> <em>&mdash; Shawn Moore</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large"><a target="_blank" href="http://sartak.org/talks/frozen-perl-2009/moose/"><i class="icon-picture"></i></a></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large"><a target="_blank" href="http://www.frozen-perl.org/mpw2009/talk/1687"><i class="icon-calendar"></i></a></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#e_lamp_nashville">
-                                E-LAMP Nashville
-                            </a>
-                        </div>
-                        <div id="e_lamp_nashville" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                <h2>2009</h2>
-                                <div class="well">
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong>Perl - Good Languages Borrow, Great Languages Steal</strong> <em>&mdash; Stevan Little</em>
-                                        </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                          </div>
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#e_lamp_nashville">
+                                    E-LAMP Nashville
+                                </a>
+                            </div>
+                            <div id="e_lamp_nashville" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    <h2>2009</h2>
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong>Perl - Good Languages Borrow, Great Languages Steal</strong> <em>&mdash; Stevan Little</em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                              </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <footer class="footer">
+    <footer class="footer">
+        <div style="margin-top: 10px" align="center">
             <p>&copy; Infinity Interactive 2012</p>
-        </footer>
+        </div>
+    </footer>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>

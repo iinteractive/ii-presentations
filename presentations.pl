@@ -485,19 +485,34 @@ __DATA__
         <meta name="author" content="">
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
+            html {
+                height: 100%;
+            }
+
             body {
-                padding-top: 20px;
-                padding-bottom: 0px;
+                height: 100%;
                 background: #ffffff;
                 color: #242927;
             }
 
+            #wrap {
+                min-height: 100%;
+            }
+
+            #main {
+                overflow:auto;
+                padding-bottom: 70px; /* this needs to be bigger than footer height*/
+            }
+
             .footer {
-                padding: 20px 20px;
-                margin-top: 70px;
+                position: relative;
+                margin-top: -50px;
+                height: 50px;
+                clear: both;
                 border-top: 1px solid #E5E5E5;
                 background-color: whiteSmoke;
             }
+
         </style>
         <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
@@ -505,8 +520,9 @@ __DATA__
         <![endif]-->
     </head>
     <body>
-
-            <div align="center">
+    <div id="wrap">
+        <div id="main" class="container clear-top">
+            <div style="margin-top: 20px" align="center">
                 <img src="img/ii-logo-horiz-290.png" height="150" width="598" />
                 <p class="lead">
                     <nobr>At Infinity, it is our conviction that the true value of Open Source</nobr>
@@ -514,58 +530,62 @@ __DATA__
                     <nobr>software can only by found through participation.</nobr>
                 </p>
             </div>
-        <div class="container">
-            <div class="accordian" id="conferences">
-                : for $talks.keys().sort().reverse() -> $conference {
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#<: to_ident( $conference ) :>">
-                                <: $conference :>
-                            </a>
-                        </div>
-                        <div id="<: to_ident( $conference ) :>" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                : for $talks[$conference].keys().sort() -> $year {
-                                <h2><: $year :></h2>
-                                <div class="well">
-                                    : for $talks[$conference][$year] -> $talk {
-                                    <div class="row">
-                                        <div class="span6">
-                                            <strong><: $talk.title :></strong> <em>&mdash; <: $talk.author :></em>
+            <div class="container">
+                <div class="accordian" id="conferences">
+                    : for $talks.keys().sort().reverse() -> $conference {
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#<: to_ident( $conference ) :>">
+                                    <: $conference :>
+                                </a>
+                            </div>
+                            <div id="<: to_ident( $conference ) :>" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                    : for $talks[$conference].keys().sort() -> $year {
+                                    <h2><: $year :></h2>
+                                    <div class="well">
+                                        : for $talks[$conference][$year] -> $talk {
+                                        <div class="row">
+                                            <div class="span6">
+                                                <strong><: $talk.title :></strong> <em>&mdash; <: $talk.author :></em>
+                                            </div>
+                                            <div class="span5">
+                                              <div class="btn-group">
+                                                  : if $talk.slide_url {
+                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a></button>
+                                                  : } else {
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
+                                                  : }
+                                                  : if $talk.video_url {
+                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a></button>
+                                                  : } else {
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
+                                                  : }
+                                                  : if $talk.schedule_url {
+                                                      <button class="btn btn-large"><a target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a></button>
+                                                  : } else {
+                                                      <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
+                                                  : }
+                                              </div>
+                                            </div>
                                         </div>
-                                        <div class="span5">
-                                          <div class="btn-group">
-                                              : if $talk.slide_url {
-                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a></button>
-                                              : } else {
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-picture"></i></button>
-                                              : }
-                                              : if $talk.video_url {
-                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a></button>
-                                              : } else {
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-film"></i></button>
-                                              : }
-                                              : if $talk.schedule_url {
-                                                  <button class="btn btn-large"><a target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a></button>
-                                              : } else {
-                                                  <button class="btn btn-large" disabled="true"><i class="icon-calendar"></i></button>
-                                              : }
-                                          </div>
-                                        </div>
+                                        : }
                                     </div>
                                     : }
                                 </div>
-                                : }
                             </div>
                         </div>
-                    </div>
-                : }
+                    : }
+                </div>
             </div>
         </div>
+    </div>
 
-        <footer class="footer">
+    <footer class="footer">
+        <div style="margin-top: 10px" align="center">
             <p>&copy; Infinity Interactive 2012</p>
-        </footer>
+        </div>
+    </footer>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
