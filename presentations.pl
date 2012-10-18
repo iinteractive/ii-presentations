@@ -64,7 +64,7 @@ my $talks = {
                 slide_url => 'https://speakerdeck.com/u/stevan_little/p/moose-a-post-modern-object-system-for-perl'
             },
             {
-                title => "Horizontal Code Resuse with Moose::Role",
+                title => "Horizontal Code Reuse with Moose::Role",
                 author => 'Stevan Little',
                 schedule_url => 'http://conferences.mongueurs.net/yn2008/talk/1063',
             }
