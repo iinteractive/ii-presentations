@@ -3,7 +3,8 @@
 use strict;
 use warnings;
 
-use Template;
+use Data::Section::Simple;
+use Text::Xslate;
 
 my $authors = {
     'Stevan Little' => {
@@ -23,22 +24,22 @@ my $authors = {
     },
     'Jesse Luehrs' => {
         gravatar_url => 'http://www.gravatar.com/avatar/88766de7a058697d3d0335b8d384fd2a.png',
-        github_url => 'https://github.com/doy',        
+        github_url => 'https://github.com/doy',
         cpan_url => 'https://www.metacpan.org/author/DOY'
     },
     'Jay Hannah' => {
         gravatar_url => 'http://www.gravatar.com/avatar/e45a33b946514b3720ca409b3b876f66.png',
-        github_url => 'https://github.com/jhannah',        
+        github_url => 'https://github.com/jhannah',
         cpan_url => 'https://www.metacpan.org/author/JHANNAH'
     },
     'John Anderson' => {
         gravatar_url => 'http://www.gravatar.com/avatar/025d30f04795e1efc142701e4ac89bfd.png',
-        github_url => 'https://github.com/genehack',        
+        github_url => 'https://github.com/genehack',
         cpan_url => 'https://www.metacpan.org/author/GENEHACK'
     },
     'Dylan Hardison' => {
         gravatar_url => 'http://www.gravatar.com/avatar/ea4290f897444ad075f1c33fecc24f8f.png',
-        github_url => 'https://github.com/dylanwh',        
+        github_url => 'https://github.com/dylanwh',
         cpan_url => 'https://www.metacpan.org/author/DHARDISON'
     }
 };
@@ -277,7 +278,7 @@ my $talks = {
                 title => 'Horizontal Code Reuse with Moose::Role',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2007/talk/714'
-            }            
+            }
         ],
         2008 => [
             {
@@ -289,12 +290,12 @@ my $talks = {
                 title => 'Moose: A Postmodern Object System for Perl 5',
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1522'
-            },               
+            },
             {
                 title => "The Case for switching to Python - A Manager's Guide to Moose",
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2008/talk/1523'
-            }               
+            }
         ],
         2010 => [
             {
@@ -437,29 +438,32 @@ my $talks = {
 
 };
 
-my $output;
-Template->new->process(
-    \*DATA, 
-    {
-        talks   => $talks,
-        authors => $authors,
-        to_ident => sub {
-            my $ident = lc $_[0];
-            $ident =~ s/\s/_/g;
-            $ident =~ s/\-/_/g;
-            $ident =~ s/\//_/g;            
-            $ident =~ s/\:/_/g;
-            $ident;
-        }
+my $vpath = Data::Section::Simple->new()->get_data_section();
+my $tx    = Text::Xslate->new(
+  function => {
+    to_ident => sub {
+      my $ident = lc $_[0];
+      $ident =~ s/\s/_/g;
+      $ident =~ s/\-/_/g;
+      $ident =~ s/\//_/g;
+      $ident =~ s/\:/_/g;
+      $ident;
     },
-    \$output
+  },
+  path => [ $vpath ],
 );
+
+my $output = $tx->render( 'template.tx' , {
+  talks   => $talks,
+  authors => $authors,
+});
 
 print $output;
 
 1;
 
 __DATA__
+@@ template.tx
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -500,42 +504,45 @@ __DATA__
 
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
-                [% FOREACH conference IN talks.keys.sort.reverse %]
-                    <li><a href="#[% to_ident( conference ) %]" data-toggle="pill">[% conference %]</a></li>
-                [% END %]
+                : for $talks.keys().sort().reverse() -> $conference {
+                    <li><a href="#<: to_ident( $conference ) :>" data-toggle="pill"><: $conference :></a></li>
+                : }
                 </ul>
-                 
+
                 <div class="tab-content">
-                [% FOREACH conference IN talks.keys.sort.reverse %]
-                    <div class="tab-pane" id="[% to_ident( conference ) %]">
-                    [% FOREACH year IN talks.$conference.keys.sort %]
-                        <h2>[% year %]</h2>
-                        [% FOREACH talk IN talks.$conference.$year %]
+                    : for $talks.keys().sort().reverse() -> $conference {
+                    <div class="tab-pane" id="<: to_ident( $conference ) :>">
+                        : for $talks[$conference].keys().sort() -> $year {
+                        <h2><: $year :></h2>
+                            : for $talks[$conference][$year] -> $talk {
                             <div class="row">
                                 <div class="span4">
-                                    <strong>[% talk.title %]</strong> [% IF talk.schedule_url %]<a target="_blank" href="[% talk.schedule_url %]">[link]</a>[% END %]
+                                  <strong><: $talk.title :></strong>
+                                  : if $talk.schedule_url {
+                                  <a target="_blank" href="<: $talk.schedule_url :>">[link]</a>
+                                  : }
                                 </div>
                                 <div class="span2">
-                                    [% SET author = talk.author %] 
+                                    : my $author = $authors[$talk.author]
                                     <div class="btn-group">
                                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <img src="[% authors.$author.gravatar_url %]" height="20" /> [% author %]
+                                            <img src="<: $author.gravatar_url :>" height="20" /><: $talk.author :>
                                             <span class="caret"></span>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a target="_blank" href="[% authors.$author.github_url %]">Github</a></li>
-                                            <li><a target="_blank" href="[% authors.$author.cpan_url %]">CPAN</a></li>
+                                            <li><a target="_blank" href="<: $author.github_url :>">Github</a></li>
+                                            <li><a target="_blank" href="<: $author.cpan_url :>">CPAN</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                        [% END %]
-                    [% END %]
+                          : }
+                        : }
                     </div>
-                [% END %]
+                    : }
                 </div>
             </div>
-        
+
 
 
             <hr>
@@ -561,9 +568,3 @@ __DATA__
     </script>
     </body>
 </html>
-
-
-
-
-
-
