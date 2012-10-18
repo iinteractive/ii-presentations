@@ -567,5 +567,8 @@ __DATA__
             $('#yapc__na_conf').tab('show');
         });
     </script>
+    <script type="text/javascript">
+        $('#yapc__na_conf').tab('show');
+    </script>
     </body>
 </html>
