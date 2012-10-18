@@ -254,7 +254,8 @@ my $talks = {
                 title => 'The Evolution of Path::Dispatcher',
                 author => 'Shawn Moore',
                 schedule_url => 'http://yapcasia.org/2010/talks/63D22246-BC8C-11DF-8791-B9FC0F276C45',
-                slide_url => 'http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/'
+                slide_url => 'http://sartak.org/talks/yapc-asia-2010/evolution-of-path-dispatcher/',
+                video_url => 'http://www.youtube.com/watch?v=fLVTZv4XjgM',
             },
         ],
         2011 => [
