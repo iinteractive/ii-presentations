@@ -38,17 +38,17 @@
 
             <div class="tabbable tabs-left">
                 <ul class="nav nav-tabs" id="conferences">
-                    <li><a href="#yapc__na" data-toggle="pill">YAPC::NA</a></li>
-                    <li><a href="#yapc__eu" data-toggle="pill">YAPC::EU</a></li>
-                    <li><a href="#yapc__asia" data-toggle="pill">YAPC::Asia</a></li>
-                    <li><a href="#washington_dc_baltimore_perl_workshop" data-toggle="pill">Washington DC/Baltimore Perl Workshop</a></li>
-                    <li><a href="#pittsburgh_perl_workshop" data-toggle="pill">Pittsburgh Perl Workshop</a></li>
-                    <li><a href="#orlando_perl_workshop" data-toggle="pill">Orlando Perl Workshop</a></li>
-                    <li><a href="#osdc_taiwan" data-toggle="pill">OSDC Taiwan</a></li>
-                    <li><a href="#oscon" data-toggle="pill">OSCON</a></li>
-                    <li><a href="#london_perl_workshop" data-toggle="pill">London Perl Workshop</a></li>
-                    <li><a href="#frozen_perl" data-toggle="pill">Frozen Perl</a></li>
-                    <li><a href="#e_lamp_nashville" data-toggle="pill">E-LAMP Nashville</a></li>
+                    <li><a id="yapc__na_conf" href="#yapc__na" data-toggle="pill">YAPC::NA</a></li>
+                    <li><a id="yapc__eu_conf" href="#yapc__eu" data-toggle="pill">YAPC::EU</a></li>
+                    <li><a id="yapc__asia_conf" href="#yapc__asia" data-toggle="pill">YAPC::Asia</a></li>
+                    <li><a id="washington_dc_baltimore_perl_workshop_conf" href="#washington_dc_baltimore_perl_workshop" data-toggle="pill">Washington DC/Baltimore Perl Workshop</a></li>
+                    <li><a id="pittsburgh_perl_workshop_conf" href="#pittsburgh_perl_workshop" data-toggle="pill">Pittsburgh Perl Workshop</a></li>
+                    <li><a id="orlando_perl_workshop_conf" href="#orlando_perl_workshop" data-toggle="pill">Orlando Perl Workshop</a></li>
+                    <li><a id="osdc_taiwan_conf" href="#osdc_taiwan" data-toggle="pill">OSDC Taiwan</a></li>
+                    <li><a id="oscon_conf" href="#oscon" data-toggle="pill">OSCON</a></li>
+                    <li><a id="london_perl_workshop_conf" href="#london_perl_workshop" data-toggle="pill">London Perl Workshop</a></li>
+                    <li><a id="frozen_perl_conf" href="#frozen_perl" data-toggle="pill">Frozen Perl</a></li>
+                    <li><a id="e_lamp_nashville_conf" href="#e_lamp_nashville" data-toggle="pill">E-LAMP Nashville</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -1199,8 +1199,9 @@
             $('#conferences a').click(function (e) {
                 e.preventDefault();
                 $(this).tab('show');
-            })
-        });
+            });
+            $('#yapc__na_conf').tab('show');
+          });
     </script>
     </body>
 </html>
