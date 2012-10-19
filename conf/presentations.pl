@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 
-use Data::Section::Simple;
 use Text::Xslate qw/ mark_raw /;
 
 my $authors = {
@@ -512,23 +511,7 @@ my $talks = {
 
 };
 
-my $tx    = Text::Xslate->new(
-  function => {
-    to_ident => sub {
-      my $ident = lc $_[0];
-      $ident =~ s/\s/_/g;
-      $ident =~ s/\-/_/g;
-      $ident =~ s/\//_/g;
-      $ident =~ s/\:/_/g;
-      $ident;
-    },
-  },
-  path => [ 'templates' ],
-);
-
-my $output = $tx->render( 'template.tx' , {
+{
   talks   => $talks,
   authors => $authors,
-});
-
-print $output;
+}
