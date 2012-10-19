@@ -512,7 +512,6 @@ my $talks = {
 
 };
 
-my $vpath = Data::Section::Simple->new()->get_data_section();
 my $tx    = Text::Xslate->new(
   function => {
     to_ident => sub {
@@ -524,7 +523,7 @@ my $tx    = Text::Xslate->new(
       $ident;
     },
   },
-  path => [ $vpath ],
+  path => [ 'templates' ],
 );
 
 my $output = $tx->render( 'template.tx' , {
@@ -533,130 +532,3 @@ my $output = $tx->render( 'template.tx' , {
 });
 
 print $output;
-
-1;
-
-__DATA__
-@@ template.tx
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Infinity Interactive Presentations</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <style type="text/css">
-            html {
-                height: 100%;
-            }
-
-            body {
-                height: 100%;
-                background: #ffffff;
-                color: #242927;
-            }
-
-            #wrap {
-                min-height: 100%;
-            }
-
-            #main {
-                overflow:auto;
-                padding-bottom: 70px; /* this needs to be bigger than footer height*/
-            }
-
-            .footer {
-                position: relative;
-                margin-top: -50px;
-                height: 50px;
-                clear: both;
-                border-top: 1px solid #E5E5E5;
-                background-color: #ddd;
-            }
-
-        </style>
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-    <div id="wrap">
-        <div id="main" class="container clear-top">
-            <div style="margin-top: 20px" align="center">
-                <img src="img/ii-logo-horiz-290.png" height="150" width="598" />
-                <p class="lead">
-                    <nobr>At Infinity, it is our conviction that the true value of Open Source</nobr>
-                    <br/>
-                    <nobr>software can only by found through participation.</nobr>
-                </p>
-            </div>
-            <div class="container">
-                <div class="accordian" id="conferences">
-                    : for $talks.keys().sort().reverse() -> $conference {
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#<: to_ident( $conference ) :>">
-                                    <: $conference :>
-                                </a>
-                            </div>
-                            <div id="<: to_ident( $conference ) :>" class="accordion-body collapse">
-                                <div class="accordion-inner">
-                                    : for $talks[$conference].keys().sort() -> $year {
-                                    <h2><: $year :></h2>
-                                    <div class="well">
-                                        : for $talks[$conference][$year] -> $talk {
-                                        <div class="row" style="margin-left: 0px; margin-bottom: 3px; border-bottom: 1px solid #ccc">
-                                            <div class="span6">
-                                                <div><strong><: $talk.title :></strong></div>
-                                                <div style="font-size: 0.9em; margin-top: -3px; color: #888"><: $talk.author :></div>
-                                            </div>
-                                            <div class="span4">
-                                                <div class="btn-group pull-right" style="margin-top: 2px; ">
-                                                    : if $talk.slide_url {
-                                                        <a class="btn" target="_blank" href="<: $talk.slide_url :>"><i class="icon-picture"></i></a>
-                                                    : } else {
-                                                        <button class="btn" disabled="true"><i class="icon-picture icon-white"></i></button>
-                                                    : }
-                                                    : if $talk.video_url {
-                                                        <a class="btn" target="_blank" href="<: $talk.video_url :>"><i class="icon-film"></i></a>
-                                                    : } else {
-                                                        <button class="btn" disabled="true"><i class="icon-film icon-white"></i></button>
-                                                    : }
-                                                    : if $talk.schedule_url {
-                                                        <a class="btn" target="_blank" href="<: $talk.schedule_url :>"><i class="icon-calendar"></i></a>
-                                                    : } else {
-                                                        <button class="btn" disabled="true"><i class="icon-calendar icon-white"></i></button>
-                                                    : }
-                                                </div>
-                                            </div>
-                                        </div>
-                                        : }
-                                    </div>
-                                    : }
-                                </div>
-                            </div>
-                        </div>
-                    : }
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div style="margin-top: 10px" align="center">
-            <p>&copy; Infinity Interactive 2012</p>
-        </div>
-    </footer>
-
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script type="javascript">
-        $(function () {
-            $(".collapse").collapse()
-        });
-    </script>
-    </body>
-</html>
