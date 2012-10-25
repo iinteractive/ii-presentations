@@ -513,8 +513,21 @@ my $talks = {
             {
                 title => 'Open source Bioinformatics',
                 author => 'Jay Hannah',
-                slide_url => 'http://prezi.com/fdqw8b-tkihc/open-source-in-bioinformatics/'
-            }
+                slide_url => 'http://prezi.com/fdqw8b-tkihc/open-source-in-bioinformatics/',
+            },
+            {
+                title => 'Various juicy bits of Modern Perl (live demo)',
+                author => 'Jay Hannah',
+                slide_url => 'https://github.com/jhannah/odlug/tree/master/presentations/20120814-Moose101',
+            },
+            {
+                title => 'perlbrew lib handles local::lib for you (live demo)',
+                author => 'Jay Hannah',
+            },
+            {
+                title => 'OAuth2 and REST at force.com (guided tour)',
+                author => 'Jay Hannah',
+            },
         ],
     },
 
