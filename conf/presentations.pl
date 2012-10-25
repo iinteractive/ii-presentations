@@ -131,6 +131,11 @@ my $talks = {
                 title => 'App::Termcast - share your terminals!',
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2647'
+            },
+            {
+                title => 'Catalyst in the wild: omnihotels.com',
+                author => 'Jay Hannah',
+                schedule_url => 'http://yapc2010.com/yn2010/talk/2934',
             }
         ],
         2011 => [
