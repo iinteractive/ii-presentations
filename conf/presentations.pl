@@ -508,7 +508,15 @@ my $talks = {
             },
         ],
     },
-
+    'Omaha Perl Mongers et. al.' => {
+        2012 => [
+            {
+                title => 'Open source Bioinformatics',
+                author => 'Jay Hannah',
+                slide_url => 'http://prezi.com/fdqw8b-tkihc/open-source-in-bioinformatics/',
+            }
+        ],
+    },
 
 };
 
