@@ -123,11 +123,6 @@ my $talks = {
                 slide_url => 'http://sartak.org/talks/yapc-na-2010/path-dispatcher/'
             },
             {
-                title => 'Catalyst in the wild: omnihotels.com',
-                author => 'Jay Hannah',
-                schedule_url => 'http://yapc2010.com/yn2010/talk/2934',
-            },
-            {
                 title => 'App::Termcast - share your terminals!',
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://yapc2010.com/yn2010/talk/2647'
