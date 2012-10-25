@@ -234,6 +234,7 @@ my $talks = {
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://act.yapc.eu/ye2012/talk/4181',
                 slide_url => 'http://tozt.net/talks/bread_board_yapc_eu_2012.pdf',
+                video_url => 'http://youtu.be/Xpk7AV90gd8',
             },
             {
                 title => 'A MOP for Perl 5',
