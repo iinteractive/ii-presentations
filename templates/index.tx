@@ -64,7 +64,7 @@
                             </div>
                             <div id="<: to_ident( $conference ) :>" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                    : for $talks[$conference].keys().sort() -> $year {
+                                    : for $talks[$conference].keys().sort().reverse() -> $year {
                                     <h2><: $year :></h2>
                                     <div class="well">
                                         : for $talks[$conference][$year] -> $talk {
