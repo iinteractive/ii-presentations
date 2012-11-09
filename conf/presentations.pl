@@ -66,7 +66,13 @@ my $talks = {
                 title => "Horizontal Code Reuse with Moose::Role",
                 author => 'Stevan Little',
                 schedule_url => 'http://conferences.mongueurs.net/yn2008/talk/1063',
-            }
+            },
+            {
+                title => "ChemChains sandbox - Simulating cell biology in boolean networks",
+                author => 'Jay Hannah',
+                schedule_url => 'http://conferences.mongueurs.net/yn2008/talk/1411',
+                slide_url => 'http://odlug.org/presentations/2008-YAPCNA-ChemChainsSandbox.pdf',
+            },
         ],
         2009 => [
             {
@@ -527,6 +533,13 @@ my $talks = {
             {
                 title => 'OAuth2 and REST at force.com (guided tour)',
                 author => 'Jay Hannah',
+            },
+        ],
+        2006 => [
+            {
+                title => 'Intro to Perl and Bioinformatics',
+                author => 'Jay Hannah',
+                slide_url => 'http://odlug.org/presentations/2006-IntroPerlAndBioinformatics.pdf',
             },
         ],
     },
