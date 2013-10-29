@@ -36,11 +36,6 @@ my $authors = {
         github_url => 'https://github.com/genehack',
         cpan_url => 'https://www.metacpan.org/author/GENEHACK'
     },
-    'Dylan Hardison' => {
-        gravatar_url => 'http://www.gravatar.com/avatar/ea4290f897444ad075f1c33fecc24f8f.png',
-        github_url => 'https://github.com/dylanwh',
-        cpan_url => 'https://www.metacpan.org/author/DHARDISON'
-    }
 };
 
 my $talks = {
@@ -209,6 +204,35 @@ my $talks = {
                 slide_url => 'http://www.slideshare.net/genehackdotorg/hd-14787416',
             }
         ],
+        2013 => [
+            {
+                title => 'So Much Joy',
+                author => 'John Anderson',
+                schedule_url => 'http://www.yapcna.org/yn2013/talk/4806',
+            },
+            {
+                title => 'Automate Yo\'self',
+                author => 'John Anderson',
+                schedule_url => 'http://www.yapcna.org/yn2013/talk/4742',
+            },
+            {
+                title => 'Moe Status Update',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.yapcna.org/yn2013/talk/4776',
+                slide_url => 'https://speakerdeck.com/stevan_little/moe-status-update'
+            },
+            {
+                title => 'Perl - The Detroit of Scripting Languages (Tuesday Keynote)',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.yapcna.org/yn2013/talk/4733',
+                slide_url => 'https://speakerdeck.com/stevan_little/perl-the-detroit-of-scripting-languages'
+            },
+            {
+                title => 'Bioperl Rules/Drools',
+                author => 'Jay Hannah',
+                schedule_url => 'http://www.yapcna.org/yn2013/talk/4687',
+            },
+        ]
     },
     'YAPC::EU' => {
         2007 => [
@@ -284,6 +308,15 @@ my $talks = {
                 slide_url => 'http://sartak.org/talks/yapc-asia-2011/dtrace/',
                 video_url => 'http://www.youtube.com/watch?v=GccTqjEWAp4'
             }
+        ],
+        2013 => [
+            {
+                title => 'git flux - effective branch management',
+                author => 'Shawn Moore',
+                schedule_url => 'http://yapcasia.org/2013/talk/show/e73de9d2-c803-11e2-be2e-7ec06aeab6a4',
+                slide_url => 'http://sartak.org/talks/dcbpw-2013/git-flux/',
+                video_url => 'http://www.youtube.com/watch?v=-IxlFRamNRk'
+            },
         ]
     },
     'OSCON' => {
@@ -375,15 +408,26 @@ my $talks = {
                 schedule_url => 'http://pghpw.org/ppw2011/talk/3879',
             },
         ],
+        2013 => [
+            {
+                title => 'Automate Yo\'self',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2013/talk/5084',
+            },
+            {
+                title => 'git flux - effective branch management',
+                author => 'Shawn Moore',
+                schedule_url => 'http://pghpw.org/ppw2013/talk/5054',
+                slide_url => 'http://sartak.org/talks/dcbpw-2013/git-flux/'
+            },
+            {
+                title => 'The p5-MOP rides again!',
+                author => 'Stevan Little',
+                schedule_url => 'http://pghpw.org/ppw2013/talk/5059',
+            },
+        ]
     },
     'Orlando Perl Workshop' => {
-        2009 => [
-            {
-                title => 'Objects in Lua',
-                author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2009/talk/1703'
-            }
-        ],
         2010 => [
             {
                 title => 'Untitled No. 12',
@@ -398,39 +442,16 @@ my $talks = {
                 schedule_url => 'http://www.perloasis.info/opw2010/talk/2476',
                 video_url => 'http://www.presentingperl.org/opw2010/cruel-world/'
             },
-            {
-                title => 'How to Debianize a CPAN Dist',
-                author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2010/talk/2483',
-                video_url => 'http://www.presentingperl.org/opw2010/debianize/'
-            }
         ],
         2011 => [
-            {
-                title => 'Managing assets: Keeping 7.5G of media files out of subversion',
-                author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2011/talk/3181',
-                video_url => 'http://www.presentingperl.org/opw2011/managing-assets/'
-            },
             {
                 title => 'Getting Code for Free - A Love Letter to Open Source (Keynote)',
                 author => 'Stevan Little',
                 schedule_url => 'http://www.perloasis.info/opw2011/talk/3182',
                 video_url => 'http://www.presentingperl.org/opw2011/code-for-free/'
             },
-            {
-                title => 'Bicycle Commuting for the Telecommuter',
-                author => 'Dylan Hardison',
-                video_url => 'http://www.presentingperl.org/opw2011/bicycle-commuting-for-the-telecommuter/'
-            }
         ],
         2012 => [
-            {
-                title => 'Organizing Technical Groups in Meatspace',
-                author => 'Dylan Hardison',
-                schedule_url => 'http://www.perloasis.info/opw2012/talk/3928',
-                video_url => 'http://www.presentingperl.org/opw2012/organising-technical-groups-in-meatspace/'
-            },
             {
                 title => 'A Brave New Perl World',
                 author => 'Stevan Little',
@@ -455,6 +476,24 @@ my $talks = {
                 schedule_url => 'http://www.perloasis.info/opw2012/talk/3933',
                 video_url => 'http://www.presentingperl.org/opw2012/tweakers-anonymous/'
             }
+        ],
+        2013 => [
+            {
+                title => 'Perl is not Dead, it is a Dead End',
+                author => 'Stevan Little',
+                schedule_url => 'http://www.perloasis.info/opw2013/talk/4465',
+                slide_url => 'https://speakerdeck.com/stevan_little/perl-is-not-dead-it-is-a-dead-end'
+            },
+            {
+                title => 'OX - The hardest working two letters in perl',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://www.perloasis.info/opw2013/talk/4482'
+            },
+            {
+                title => 'There Are Fates Worse Than Death',
+                author => 'John Anderson',
+                schedule_url => 'http://www.perloasis.info/opw2013/talk/4475'
+            }
         ]
     },
     'Washington DC/Baltimore Perl Workshop' => {
@@ -471,6 +510,19 @@ my $talks = {
                 schedule_url => 'http://dcbpw.org/dcbpw2012/talk/4066'
             }
         ],
+        2013 => [
+            {
+                title => 'Introducing git flux',
+                author => 'Shawn Moore',
+                schedule_url => 'http://dcbpw.org/dcbpw2013/talk/4607',
+                slide_url => 'http://sartak.org/talks/dcbpw-2013/git-flux/'
+            },
+            {
+                title => 'Perl 8: The Future',
+                author => 'Jesse Luehrs',
+                schedule_url => 'http://dcbpw.org/dcbpw2013/talk/4606',
+            },
+        ]
     },
     'Frozen Perl' => {
         2008 => [
