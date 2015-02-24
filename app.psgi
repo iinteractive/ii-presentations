@@ -24,6 +24,7 @@ builder {
         xslate_vars  => $data,
         xslate_args  => {
             function => {
+                get_year => sub { (localtime)[5] + 1900 } ,
                 to_ident => sub {
                     my $ident = lc $_[0];
                     $ident =~ s/\s/_/g;

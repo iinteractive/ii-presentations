@@ -107,7 +107,7 @@
 
     <footer class="footer">
         <div style="margin-top: 10px" align="center">
-            <p>&copy; Infinity Interactive 2012</p>
+            <p>&copy; Infinity Interactive <: get_year() :></p>
         </div>
     </footer>
 
