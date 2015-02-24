@@ -1,4 +1,4 @@
 render:
-	@wallflower -a app.psgi -d . urls
+	@wallflower -a app.psgi -d . -F urls --no-follow
 preview:
 	@plackup
