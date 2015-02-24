@@ -66,7 +66,7 @@ my $talks = {
                 title => "ChemChains sandbox - Simulating cell biology in boolean networks",
                 author => 'Jay Hannah',
                 schedule_url => 'http://conferences.mongueurs.net/yn2008/talk/1411',
-                slide_url => 'http://odlug.org/presentations/2008-YAPCNA-ChemChainsSandbox.pdf',
+                slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2008-YAPCNA-ChemChainsSandbox.pdf',
             },
         ],
         2009 => [
@@ -231,6 +231,7 @@ my $talks = {
                 title => 'Bioperl Rules/Drools',
                 author => 'Jay Hannah',
                 schedule_url => 'http://www.yapcna.org/yn2013/talk/4687',
+                slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2013-BioPerl%20Rules%20%3A%20Drools.pdf',
             },
         ],
         2014 => [
