@@ -232,7 +232,21 @@ my $talks = {
                 author => 'Jay Hannah',
                 schedule_url => 'http://www.yapcna.org/yn2013/talk/4687',
             },
-        ]
+        ],
+        2014 => [
+            {
+                title => 'PleaseConvince.Me Lightning Talk',
+                author => 'Jay Hannah',
+                schedule_url => 'http://www.yapcna.org/yn2014/talk/5352',
+                slide_url => 'http://pleaseconvince.me/PleaseConvince.Me-YAPC-2014.pdf',
+            },
+            {
+                title => 'Scuba diving my grandpa\'s WWII ship in Indonesia',
+                author => 'Jay Hannah',
+                schedule_url => 'http://www.yapcna.org/yn2014/talk/5353',
+                slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2014-USS-Houston-YAPC.pdf',
+            },
+        ],
     },
     'YAPC::EU' => {
         2007 => [
@@ -567,6 +581,20 @@ my $talks = {
         ],
     },
     'Omaha Perl Mongers et al' => {
+        2015 => [
+            {
+                title => "What's \"new\" in perl",
+                author => 'Jay Hannah',
+                slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2015-NewInPerl.pdf',
+            },
+        ],
+        2014 => [
+            {
+                title => 'Regular Expressions Lightning Talk',
+                author => 'Jay Hannah',
+                slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2014-Regex.pdf',
+            },
+        ],
         2012 => [
             {
                 title => 'Open source Bioinformatics',
