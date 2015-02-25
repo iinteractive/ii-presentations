@@ -360,6 +360,7 @@ my $talks = {
                 author => 'John Anderson' ,
                 schedule_url => 'http://www.oscon.com/oscon2014/public/schedule/detail/34463' ,
                 slide_url => 'http://www.slideshare.net/genehackdotorg/gitgot-the-swiss-army-chainsaw-of-git-repo-management' ,
+                video_url => 'https://www.youtube.com/watch?v=eKcpxtnseiw' ,
             },
         ],
     },
