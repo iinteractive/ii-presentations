@@ -12,3 +12,4 @@ META.yml
 MYMETA.yml
 nytprof.out
 pm_to_blib
+.dir-locals.el
