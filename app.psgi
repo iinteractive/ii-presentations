@@ -6,7 +6,21 @@ use Plack::Builder;
 use Plack::Middleware::Static;
 use Plack::Middleware::Xslate;
 
-my $data = do 'conf/presentations.pl';
+use II::Presentations;
+
+my $presentations = II::Presentations->new({ data_dir => 'conf' });
+
+my $authors = $presentations->authors;
+my $conferences = $presentations->conferences;
+my $sorted_conferences = $presentations->sorted_conferences;
+my $talks = $presentations->classic_talks;
+
+my $data = {
+    authors => $authors,
+    conferences => $conferences,
+    sorted_conferences => $sorted_conferences,
+    talks => $talks
+};
 
 builder {
     enable sub {

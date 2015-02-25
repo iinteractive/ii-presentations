@@ -1,0 +1,7 @@
+{
+   "author" : "Stevan Little",
+   "conf" : "YAPC::NA",
+   "schedule_url" : "http://conferences.mongueurs.net/yn2008/talk/1063",
+   "title" : "Horizontal Code Reuse with Moose::Role",
+   "year" : "2008"
+}

@@ -1,0 +1,9 @@
+{
+   "author" : "Jesse Luehrs",
+   "conf" : "YAPC::NA",
+   "schedule_url" : "http://act.yapcna.org/2012/talk/147",
+   "slide_url" : "http://tozt.net/talks/bread_board_yapc_na_2012/",
+   "title" : "Dependency Injection with Bread::Board",
+   "video_url" : "http://youtu.be/DhhaOQWoOpw",
+   "year" : "2012"
+}

@@ -1,0 +1,7 @@
+{
+   "author" : "Stevan Little",
+   "conf" : "Pittsburgh Perl Workshop",
+   "schedule_url" : "http://pghpw.org/ppw2007/talk/714",
+   "title" : "Horizontal Code Reuse with Moose::Role",
+   "year" : "2007"
+}

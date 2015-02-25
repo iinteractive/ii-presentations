@@ -1,0 +1,8 @@
+{
+   "author" : "Stevan Little",
+   "conf" : "YAPC::EU",
+   "schedule_url" : "http://act.yapc.eu/ye2012/talk/4069",
+   "slide_url" : "https://speakerdeck.com/u/stevan_little/p/perl-5-mop",
+   "title" : "A MOP for Perl 5",
+   "year" : "2012"
+}

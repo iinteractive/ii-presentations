@@ -55,7 +55,7 @@
             </div>
             <div class="container">
                 <div class="accordian" id="conferences">
-                    : for $talks.keys().sort().reverse() -> $conference {
+                    : for $sorted_conferences -> $conference {
                         <div class="accordion-group">
                             <div class="accordion-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#conferences" href="#<: to_ident( $conference ) :>">
@@ -70,7 +70,7 @@
                                         : for $talks[$conference][$year] -> $talk {
                                         <div class="row" style="margin-left: 0px; margin-bottom: 3px; border-bottom: 1px solid #ccc">
                                             <div class="span6">
-                                                <div><strong><: $talk.title :></strong></div>
+                                                <div><strong><: $talk.title_raw || $talk.title :></strong></div>
                                                 <div style="font-size: 0.9em; margin-top: -3px; color: #888"><: $talk.author :></div>
                                             </div>
                                             <div class="span4">
