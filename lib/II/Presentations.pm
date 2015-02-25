@@ -17,7 +17,12 @@ has 'author_dir' => (
     isa => 'Str', 
     lazy => 1,
     default => sub {
-        (shift)->data_dir . '/authors' || die 'You must specify either a data_dir or an author_dir';
+        my $self = shift;
+        if($self->data_dir) {
+            $self->data_dir . '/authors';
+        } else {
+            die 'You must specify either a data_dir or an author_dir';
+        }
     }
 );
 
@@ -26,7 +31,12 @@ has 'conference_dir' => (
     isa => 'Str', 
     lazy => 1,
     default => sub {
-        (shift)->data_dir . '/conferences' || die 'You must specify either a data_dir or a conference_dir';
+        my $self = shift;
+        if($self->data_dir) {
+            $self->data_dir . '/conferences';
+        } else {
+            die 'You must specify either a data_dir or an conference_dir';
+        }
     }
 );
 
@@ -35,7 +45,12 @@ has 'talks_dir' => (
     isa => 'Str', 
     lazy => 1,
     default => sub {
-        (shift)->data_dir . '/talks' || die 'You must specify either a data_dir or a talks_dir';
+        my $self = shift;
+        if($self->data_dir) {
+            $self->data_dir . '/talks';
+        } else {
+            die 'You must specify either a data_dir or an talks_dir';
+        }
     }
 );
 
