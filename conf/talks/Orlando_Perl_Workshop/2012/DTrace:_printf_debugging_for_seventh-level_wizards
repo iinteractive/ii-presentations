@@ -1,9 +1,0 @@
-{
-   "author" : "Shawn Moore",
-   "conf" : "Orlando Perl Workshop",
-   "schedule_url" : "http://www.perloasis.info/opw2012/talk/3868",
-   "slide_url" : "http://sartak.org/talks/perl-oasis-2012/dtrace/",
-   "title" : "DTrace: printf debugging for seventh-level wizards",
-   "video_url" : "http://www.presentingperl.org/opw2012/dtrace/",
-   "year" : "2012"
-}

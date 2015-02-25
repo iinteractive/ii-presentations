@@ -1,9 +1,0 @@
-{
-   "author" : "Shawn Moore",
-   "conf" : "YAPC::Asia",
-   "schedule_url" : "http://yapcasia.org/2011/talk/23.html",
-   "slide_url" : "http://sartak.org/talks/yapc-asia-2011/dtrace/",
-   "title" : "DTrace: printf debugging for seventh-level wizards",
-   "video_url" : "http://www.youtube.com/watch?v=GccTqjEWAp4",
-   "year" : "2011"
-}

@@ -1,7 +1,0 @@
-{
-   "author" : "Stevan Little",
-   "conf" : "Pittsburgh Perl Workshop",
-   "schedule_url" : "http://pghpw.org/ppw2010/talk/3030",
-   "title" : "Inversion of Control and Dependency Injection with Bread::Board",
-   "year" : "2010"
-}
