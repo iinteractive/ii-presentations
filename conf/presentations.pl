@@ -236,6 +236,13 @@ my $talks = {
         ],
         2014 => [
             {
+                title => 'Yet Another Keynote Speech (closing keynote)',
+                author => 'John Anderson',
+                schedule_url => 'http://www.yapcna.org/yn2014/talk/5553',
+                slide_url => 'http://www.slideshare.net/genehackdotorg/yapc-36346728',
+                video_url => 'https://www.youtube.com/watch?v=MU6IFUZZBuQ',
+            },
+            {
                 title => 'PleaseConvince.Me Lightning Talk',
                 author => 'Jay Hannah',
                 schedule_url => 'http://www.yapcna.org/yn2014/talk/5352',
@@ -246,6 +253,11 @@ my $talks = {
                 author => 'Jay Hannah',
                 schedule_url => 'http://www.yapcna.org/yn2014/talk/5353',
                 slide_url => 'https://dl.dropboxusercontent.com/u/244885/presentations/2014-USS-Houston-YAPC.pdf',
+            },
+            {
+              title => 'Meet your irc.perl.org community opers',
+              author => 'John Anderson',
+              schedule_url => 'http://www.yapcna.org/yn2014/talk/5578',
             },
         ],
     },
@@ -342,6 +354,14 @@ my $talks = {
                 schedule_url => 'http://www.oscon.com/oscon2008/public/schedule/detail/2469'
             }
         ],
+        2014 => [
+            {
+                title => 'GitGot: The Swiss Army Chainsaw of Git Repo Management',
+                author => 'John Anderson' ,
+                schedule_url => 'http://www.oscon.com/oscon2014/public/schedule/detail/34463' ,
+                slide_url => 'http://www.slideshare.net/genehackdotorg/gitgot-the-swiss-army-chainsaw-of-git-repo-management' ,
+            },
+        ],
     },
     'London Perl Workshop' => {
         2011 => [
@@ -428,6 +448,7 @@ my $talks = {
                 title => 'Automate Yo\'self',
                 author => 'John Anderson',
                 schedule_url => 'http://pghpw.org/ppw2013/talk/5084',
+                video_url => 'https://www.youtube.com/watch?v=75EdD1TpkoE' ,
             },
             {
                 title => 'git flux - effective branch management',
@@ -440,7 +461,22 @@ my $talks = {
                 author => 'Stevan Little',
                 schedule_url => 'http://pghpw.org/ppw2013/talk/5059',
             },
-        ]
+        ],
+        2014 => [
+            {
+                title => 'Kindergarten Code',
+                author => 'Shawn Moore',
+                schedule_url => 'http://pghpw.org/ppw2014/talk/5786',
+                slide_url => 'http://sartak.org/talks/ppw-2014/kindergarten-code/kindergarten-code.pdf',
+                video_url => 'https://www.youtube.com/watch?v=4sEeqtiLFVU',
+            },
+            {
+                title => 'With Great Nerdery Comes Great Responsibility',
+                author => 'John Anderson',
+                schedule_url => 'http://pghpw.org/ppw2014/talk/5816',
+                slide_url => 'http://www.slideshare.net/genehackdotorg/with-great-nerdery-comes-great-responsibility',
+            },
+        ],
     },
     'Orlando Perl Workshop' => {
         2010 => [
@@ -537,7 +573,26 @@ my $talks = {
                 author => 'Jesse Luehrs',
                 schedule_url => 'http://dcbpw.org/dcbpw2013/talk/4606',
             },
-        ]
+        ],
+        2014 => [
+            {
+                title => 'The Intersection of Code and Art' ,
+                author => 'Stevan Little' ,
+                schedule_url => 'http://dcbpw.org/dcbpw2014/talk/5428' ,
+            },
+            {
+                title => 'The Reese\'s peanut butter cup of web-dev: Plack and single-page web apps',
+                author => 'John Anderson',
+                schedule_url => 'http://dcbpw.org/dcbpw2014/talk/5461',
+                slide_url => 'http://www.slideshare.net/genehackdotorg/peanutbuttercup' ,
+            },
+            {
+                title => 'Twitterers Anonymous' ,
+                author => 'John Anderson',
+                schedule_url => 'http://dcbpw.org/dcbpw2014/talk/5518',
+                slide_url => 'http://www.slideshare.net/genehackdotorg/twitterers-anonymous',
+            },
+        ],
     },
     'Frozen Perl' => {
         2008 => [
@@ -624,7 +679,6 @@ my $talks = {
             },
         ],
     },
-
 };
 
 {
