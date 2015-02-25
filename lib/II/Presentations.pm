@@ -53,12 +53,13 @@ has 'conferences' => (
     builder => '_build_conferences'
 );
 
-has 'classic_talks' => (
+has 'talks' => (
     is => 'ro',
     isa => 'HashRef',
     lazy => 1,
-    builder => '_build_classic_talks'
+    builder => '_build_talks'
 );
+
 
 has 'sorted_conferences' => (
     is => 'ro',
@@ -93,20 +94,17 @@ sub _build_conferences {
     return $conferences;
 }
 
-sub _build_classic_talks {
+sub _build_talks {
     my $self = shift;
     my $talks;
     my $talks_dir = Path::Class::Dir->new($self->talks_dir);
-    foreach my $conference ($talks_dir->children) {
-        next unless -d $conference;
-        foreach my $year ($conference->children) {
-            next unless -d $year;
-            foreach my $talk_file ($year->children) {
-                next unless -f $talk_file;
-                my $talk_data = $talk_file->slurp || die "Hit an unslurpable talk: " . dump($talk_file) . "";
-                my $talk = $self->json->decode($talk_data) || die "Hit an unparseable talk: " . dump($talk_data) . "";
-                push @{$talks->{$talk->{conf}}->{$talk->{year}}}, $talk;
-            }
+    foreach my $author ($talks_dir->children) {
+        next unless -d $author;
+        foreach my $talk_file ($author->children) {
+            next unless -f $talk_file;
+            my $talk_data = $talk_file->slurp || die "Hit an unslurpable talk: " . dump($talk_file) . "";
+            my $talk = $self->json->decode($talk_data) || die "Hit an unparseable talk: " . dump($talk_data) . "";
+            push @{$talks->{$talk->{conf}}->{$talk->{year}}}, $talk;
         }
     }
     return $talks;

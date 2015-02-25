@@ -13,7 +13,7 @@ my $presentations = II::Presentations->new({ data_dir => 'conf' });
 my $authors = $presentations->authors;
 my $conferences = $presentations->conferences;
 my $sorted_conferences = $presentations->sorted_conferences;
-my $talks = $presentations->classic_talks;
+my $talks = $presentations->talks;
 
 my $data = {
     authors => $authors,

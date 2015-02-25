@@ -1,0 +1,9 @@
+{
+   "author" : "Shawn Moore",
+   "conf" : "YAPC::Asia",
+   "schedule_url" : "http://yapcasia.org/2013/talk/show/e73de9d2-c803-11e2-be2e-7ec06aeab6a4",
+   "slide_url" : "http://sartak.org/talks/dcbpw-2013/git-flux/",
+   "title" : "git flux - effective branch management",
+   "video_url" : "http://www.youtube.com/watch?v=-IxlFRamNRk",
+   "year" : "2013"
+}
