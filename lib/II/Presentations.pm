@@ -13,8 +13,8 @@ has 'json' => (is => 'ro', isa => 'JSON::XS', default => sub { JSON::XS->new->ca
 has 'data_dir' => (is => 'ro', isa => 'Str');
 
 has 'author_dir' => (
-    is => 'ro', 
-    isa => 'Str', 
+    is => 'ro',
+    isa => 'Str',
     lazy => 1,
     default => sub {
         my $self = shift;
@@ -27,8 +27,8 @@ has 'author_dir' => (
 );
 
 has 'conference_dir' => (
-    is => 'ro', 
-    isa => 'Str', 
+    is => 'ro',
+    isa => 'Str',
     lazy => 1,
     default => sub {
         my $self = shift;
@@ -41,8 +41,8 @@ has 'conference_dir' => (
 );
 
 has 'talks_dir' => (
-    is => 'ro', 
-    isa => 'Str', 
+    is => 'ro',
+    isa => 'Str',
     lazy => 1,
     default => sub {
         my $self = shift;
@@ -104,7 +104,7 @@ sub _build_conferences {
         next unless -f $conference_file;
         my $conference_data = $conference_file->slurp || die "Hit an unslurpable conference: " . dump($conference_file) . "";
         my $conference = $self->json->decode($conference_data) || die "Hit an unparseable conference: " . dump($conference_data) . "";
-        $conferences->{$conference->{name}} = $conference;		
+        $conferences->{$conference->{name}} = $conference;
     }
     return $conferences;
 }
