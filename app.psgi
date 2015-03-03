@@ -6,6 +6,7 @@ use Plack::Builder;
 use Plack::Middleware::Static;
 use Plack::Middleware::Xslate;
 
+use lib "./lib";
 use II::Presentations;
 
 my $presentations = II::Presentations->new({ data_dir => 'conf' });
