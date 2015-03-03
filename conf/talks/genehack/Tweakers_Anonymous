@@ -1,8 +1,17 @@
-{
-   "author" : "John Anderson",
-   "conf" : "YAPC::NA",
-   "schedule_url" : "http://act.yapcna.org/2012/talk/127",
-   "title" : "Tweakers Anonymous",
-   "video_url" : "http://www.youtube.com/watch?v=HVEDjLPZovA",
-   "year" : "2012"
-}
+[
+    {
+       "author" : "John Anderson",
+       "conf" : "YAPC::NA",
+       "schedule_url" : "http://act.yapcna.org/2012/talk/127",
+       "title" : "Tweakers Anonymous",
+       "video_url" : "http://www.youtube.com/watch?v=HVEDjLPZovA",
+       "year" : "2012"
+   },
+   {
+       "author" : "John Anderson",
+       "conf" : "Orlando Perl Workshop",
+       "title" : "Tweakers Anonymous",
+       "video_url" : "http://www.presentingperl.org/opw2012/tweakers-anonymous/",
+       "year" : "2012"
+   }
+]

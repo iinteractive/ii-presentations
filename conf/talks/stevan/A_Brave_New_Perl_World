@@ -1,7 +1,16 @@
-{
-   "author" : "Stevan Little",
-   "conf" : "Pittsburgh Perl Workshop",
-   "schedule_url" : "http://pghpw.org/ppw2011/talk/3618",
-   "title" : "A Brave New Perl World",
-   "year" : "2011"
-}
+[
+    {
+        "author" : "Stevan Little",
+        "conf" : "Pittsburgh Perl Workshop",
+        "schedule_url" : "http://pghpw.org/ppw2011/talk/3618",
+        "title" : "A Brave New Perl World",
+        "year" : "2011"
+    },
+    {
+       "author" : "Stevan Little",
+       "conf" : "Orlando Perl Workshop",
+       "title" : "A Brave New Perl World",
+       "video_url" : "http://www.presentingperl.org/opw2012/a-brave-new-perl-world/",
+       "year" : "2012"
+    }
+]
