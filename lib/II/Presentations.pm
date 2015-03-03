@@ -119,7 +119,12 @@ sub _build_talks {
             next unless -f $talk_file;
             my $talk_data = $talk_file->slurp || die "Hit an unslurpable talk: " . dump($talk_file) . "";
             my $talk = $self->json->decode($talk_data) || die "Hit an unparseable talk: " . dump($talk_data) . "";
-            push @{$talks->{$talk->{conf}}->{$talk->{year}}}, $talk;
+
+            my @talks_list = ref $talk eq 'ARRAY' ? @$talk : $talk;
+
+            foreach my $t ( @talks_list ) {
+                push @{$talks->{$t->{conf}}->{$t->{year}}}, $t;
+            }
         }
     }
     return $talks;
