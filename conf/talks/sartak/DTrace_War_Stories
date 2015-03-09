@@ -1,0 +1,9 @@
+{
+   "author" : "Shawn Moore",
+   "conf" : "YAPC::NA",
+   "schedule_url" : "http://www.yapcna.org/yn2014/talk/5389",
+   "slide_url" : "http://sartak.org/talks/yapc-na-2014/dtrace-war-stories/dtrace-war-stories.pdf",
+   "title" : "DTrace War Stories",
+   "video_url" : "https://www.youtube.com/watch?v=P88qXvU2RUA",
+   "year" : "2014"
+}
