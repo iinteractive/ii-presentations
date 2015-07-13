@@ -107,7 +107,7 @@
 
     <footer class="footer">
         <div style="margin-top: 10px" align="center">
-            <p>&copy; Infinity Interactive <: get_year() :></p>
+            <p>&copy; Infinity Interactive <: get_year() :> | <a href="http://iinteractive.com/perl.html">Infinty ❤s Perl</a></p>
         </div>
     </footer>
 
